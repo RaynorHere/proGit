@@ -1,0 +1,10 @@
+Name: Jim Crowell
+
+Comment: Yes, this was just AWS devops candy. The client code is the same as in hw3.
+
+README.md file (5 points): ok
+Setup EC2 instance (20 points): ok
+Run TimeServer in EC2 (15 points): ok
+Demonstrate fault tolerance using client (10 points): ok
+Custom AMI (extra credit: 5 points):
+Grade:  50/50

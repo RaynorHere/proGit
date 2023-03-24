@@ -1,0 +1,8 @@
+Name: Jim Crowell
+README.md file (5 points): ok
+	-Answer to your question: we don't really need to know if an IP address is valid or not
+	 as when we use it we will get an exception of some sort :-)
+Create custom image (15 points): ok
+Run TimeServer in custom image (5 points): ok
+Demonstrate fault tolerance using client (20 points): ok
+Grade:  50/50

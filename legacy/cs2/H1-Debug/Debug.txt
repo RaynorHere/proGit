@@ -1,0 +1,23 @@
+Debug Log
+
+James "JCIII" Crowell
+CS 221-02, Mason Vail
+
+
+After importing all the requisite files and starting the debugger in Eclipse, the program gets as far as "Line 71: test_emptySet()" before an error crops up. Restarting and stepping into test_emptySet(), the program proceeds to get as far as Line 111 before failing. The test in question is "emptySet_testIsEmpty". Clearly, we have an error with the isEmpty() method. That, or the emptySet variable is constructed improperly.
+
+Looking at the isEmpty() function, it runs the check if "Rear" (the variable which tracks the index size of the array) is greater than 0. The exact line is "return (rear > 0);" This would mean, "if rear is greater than 0, this is true". Meaning, the isEmpty() function returns TRUE if there are MORE THAN ZERO ELEMENTS in the set. Which is the exact opposite of what you want.
+
+Therefore, error 1: change line 40 of ArraySet.java to read "return (rear == 0);"
+
+
+Next error is on testing the emptySet_add_A_A_testIsEmpty();. Stepping into the "set.add(ELEMENT_A)" on Line 137 of the tester allows us to see the workings of the add(Element) function. Specifically, it tests to ensure that a proposed element isn't already contained in the array, and then it checks to see if the array needs expanding. Finally, it adds the element to the [Rear]th column of the array, but it DOESN'T increment Rear. Therefore, not only would the add function continually overwrite the same element address over and over (never growing the array), but when it runs the "isEmpty" check, Rear is still 0, so "isEmpty" still returns true.
+
+Therefore, error2: change line 60 of ArraySet.java to read "rear++;".
+
+
+With 2 errors down, we are up to a pass count of 91 with 2 failures. Both are relating to the "remove" function, on ArraySet's 75th line. Stepping into the Remove function, we can see it's throwing an unaccounted-for and unexpected exception, which is causing the crash. Specifically, "index 2 out of bounds for length 2." Remove() works for emptySet, but begins failing at "A_addB_AB_testRemoveA". Getting into the guts of the Remove function, it sets up a variable to represent the removed value, an integer to iterate through the array, and if the currently-iterated-upon value equals the argument passed to the Remove() function, that value is assigned to the retVal variable (Line 71). Afterward, there is a line intended to shift all elements forward so there are no gaps in the array after the removal. Said line is "setArray[i] = setArray[i+1]", which is inside the WHILE loop that has the conditions "while (i < rear)" It is while running this line that the IndexOutOfBoundsException spawns. This is the classic "off-by-one" error. "Rear" tracks the index size of the array, but since array[0] is the 1st element of the array, array[rear] refers to a position that doesn't exist; it is 1 past the final element of the array.
+
+Therefore, error 3: change line 74 of ArraySet.java to read "while (i < rear - 1)".
+
+Making that final change, the Tester runs with no problems.

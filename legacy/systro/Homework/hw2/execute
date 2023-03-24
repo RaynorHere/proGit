@@ -1,0 +1,7 @@
+rm *.class
+javac *.java
+terminator -x "java TimeServer"
+terminator -x "java TimeClient localhost 5005"
+terminator -x "java TimeClient localhost 5005"
+terminator -x "java TimeClient localhost 5005"
+terminator -x "java TimeClient localhost 5005"

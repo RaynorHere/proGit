@@ -1,0 +1,10 @@
+main
+myprog
+myprog-v2
+mytests
+*.o
+*.d
+*.i
+*.s
+*.swp
+

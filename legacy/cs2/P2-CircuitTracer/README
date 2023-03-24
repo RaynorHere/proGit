@@ -1,0 +1,159 @@
+*********************************
+*   Project 2: Circuit Tracer   *
+*     CS-221, Sec. 2, Vail      *
+*           04/29/21            *
+*      Jim "JCIII" Crowell      *
+*********************************
+
+
+OVERVIEW:
+
+CircuitTracer is a program the intent of which is to take in a .dat file containing a representation of a circuit board
+containing a starting point ("1"), an ending point ("2"), and some combination of open spaces ("O") and blocked spaces ("X"). CircuitTracer will then find the shortest path between 1 and 2 (if it exists), represent the path taken with trace characters ("T"), and return the finished result to the user with the path drawn. 
+
+
+INCLUDED FILES:
+
+CircuitBoard.java - The base file which serves as the format-checker in the initial stages of function. Populates and stores
+					the state of the board into memory for processing through the other program elements.
+					
+CircuitTracer.java - Driver class. Actually processes the board and TraceStates, and manages Storage of paths found before 
+					 return them to the user.
+					 
+InvalidFileFormatException.java - Custom exception class written primarily for CircuitBoard. Simplifies exception-catching
+								  process, allowing devs to collapse multiple error types (such as InputMismatch and 
+								  NoSuchElement) into a singl exception class to return with an appropriate message.
+								  
+OccupiedPositionException.java - Fairly self-explanatory; custom exception for if CircuitTracer tries to write a Trace 
+								 position on an already-occupied position.
+								 
+Storage.java - Class which functions to allow for storage of "current locations" on the board, as CircuitTracer attempts
+			   to find the optimal path(s) from 1 to 2. It is through Storage.java that CircuitTracer can "keep track of itself", so to speak. Storage.java also allows our program to function in both Stack or Queue mode (more on this later), meaning devs did not need to write unique code for each modality.
+			   
+TraceState.java - CircuitTracer may be the driver class, but this is the class that drives the program (i.e., allows it to 
+				  function). A TraceState IS the current location of the program's "pointer" or processor, and it represents the code that allows CircuitTracer to "move around" the board, finding paths to return to the user, if they exist. It also contains the code to check for adjacency (which is how the program will "know" when it's completed its task). Finally, TraceState.java contains a getPath() function that allows it to trace out the final form of the path found, making it visible to the user.
+
+COMPILING AND RUNNING:
+
+Ensure that all of the above files are located in the same directory. Navigate to that directory in your terminal, and enter:
+
+$ javac *.java
+
+With the java files processed and compiled, execute:
+
+$ java CircuitTracer [-s|-q] [-c|-g] [file]
+
+CircuitTracer is somewhat unique from the fare we've observed in this class thus far in that it requires additional arguments to be passed when it is executed. We will explore these arguments in more detail under "Concepts", but for a basic introduction:
+The first option, -s/-q, selects either Stack Mode or Queue Mode for the Storage function of CircuitTracer. 
+The second option, -c/-g, selects Console or GUI Mode. Lamentably, we didn't have the time to be able to commit to GUI mode, so Console is the only viable option (GUI will output a thoughtful apology message, however)
+Finally, the third argument to be passed the file to process. This requires a .dat extension, and location in the same folder as CircuitTracer.java itself.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+The biggest examination here is between functionalities of Stack or Queue Storage functionality. Depending on which mode is selected, the search algorithm will function slightly (but significantly) differently).
+As a call stack functions in a first-in-first-out mode, Stack Mode Storage means that every time the program finds another viable step in its pathfinding, the last-added step in the expansion of that path is the next step that the program will investigate and expand further from. This is what's called "Depth-First" searching, because the program will explore a single path to its completion (all the while adding other potential steps to storage to come back to once it has found the terminus of its current path) before trying other paths. An advantage of Depth-First searching is that the program is likely to find a solution faster, relatively speaking, but it's not necessarily going to be the fastest path that the program finds first. This is because the path that the program investigates first is not in any way related to the location or distance of the endpoint on the board; it is essentially left up to the mercy of the board's configuration whether or not the solution will be found immediately or at the end of processing. The immutable advantage of Stack Mode is that its memory consumption is consistent, while the alternative suffers a bit of ballooning halfway through.
+
+On the flip, we have Queue Mode, which tells the program to expand the path its on at every opportunity, and expand them sequentially, in the order they were first discovered. This is because a Queue dictates a last-in-first-out functionality, and is also referred to as "Breadth First" searching. As the program begins its search, it will take note of each possible path it can take, and add them to Storage. It will then expand each of those potential paths out into each of THEIR possible expansions, in sequential order, much akin to assembly-line fashion, and no path is updated further until every path noted before it has been expanded. The primary advantage of Breadth-First searching is that it's guaranteed that the first solution the algorithm finds WILL be the optimal, fastest solution. Its downside, however, is that it can be considerably harder on memory and processing; a Queue Mode search will show a notable "balloon" in resource consumption, peaking at the 50% mark (as in, halfway through processing all potential paths), before it pares back down as the last few, longest paths reach their termini.
+
+For the sake of completion, we have included an illustration. Just for the very curious:
+
+Sample Board
+ 1 O O
+ O O O
+ O O 2
+ 
+Stack-Mode Searching:
+STATE 01:	STATE 02:	STATE 03:	STATE 04:	STATE 05:	STATE 06:	STATE 07:
+1 O O		1 O O		1 O O		1 O O		1 O O		1 O O		1 O O
+O O O		T O O		T O O		T O O		T T O		T T O		T T T		
+O O 2		O O 2		T O 2		T T 2		O O 2		O T 2		O O 2
+								   SOLUTION			 	   SOLUTION	   SOLUTION
+								   
+Note the order of notation here: State 2, the intial DOWN movement, expands DOWN again, and then RIGHT, before returning to the initial first step of one space DOWN from starting, and then expanding RIGHT in State 5.
+
+Now that the algorithm has explored every possible endpoint of its initial expansion DOWN from the starting point, it will return and explore every possible path from its other choice of starting direction: RIGHT
+
+STATE 08:	STATE 09:	STATE 10:	STATE 11:	STATE 12:	STATE 13:
+1 T O		1 T O		1 T O		1 T O		1 T T		1 T T
+O O O		O T O		O T T		O T O		O O O		O O T
+O O 2		O O 2		O O 2		O T 2		O O 2		O O 2
+					   SOLUTION	   SOLUTION				   SOLUTION
+					   
+Queue Mode Searching:
+STATE 01:	STATE 02:	STATE 03:	STATE 04:	STATE 05:	STATE 06:	STATE 07:	STATE 08:
+1 O O		1 T O		1 O O		1 T T		1 T O		1 O O		1 O O		1 T T
+O O O		O O O		T O O		O O O		O T O		T O O 		T T O		O O T
+O O 2		O O O		O O 2		O O 2		O O 2		T O 2		O O 2		O O 2
+																				   SOLUTION
+																				   
+Here, by contrast, one can see that the program makes each possible expansion from the state it is in at time of expanding, 
+and then proceeds to return to each of those expansion in the order they were made, and then note each of THOSE positions' potential expansions, in turn.
+
+STATE 09:	STATE 10:	STATE 11:	STATE 12:	STATE 13:
+1 T O		1 T O		1 O O		1 O O		1 O O
+O T T		O T O		T O O		T T T		T T O
+O O 2		O T 2		T T 2		O O 2		O T 2
+SOLUTION   SOLUTION	   SOLUTION	   SOLUTION	   SOLUTION
+
+Having an equilateral puzzle doesn't do much to help demonstrate the difference between "who finds the correct solution fastest", but we can still demonstrate the logic of WHY Queue finds the fastest path amongst its first solution: because it takes so bloody long to find any solution. The fact of the matter is, by spidering out slowly and methodically, Queue moves through a puzzle the slowest, and so by process of elimination, the only solution it could reach first is the quickest one to be had. By contrast, odds are even that Stack mode may go down a completely dead-end path, and will not be able to return to scoping other paths until it has hit that dead end. Even if it's fifty moves away, it must reach the end. In theory, we could write Queue Mode to quit after it's found its first solution, but the purpose of this project is to be able to examine how two different "flavors" of the same algorithm differ from each other, with the same code. One final point, notice how with Queue Mode, all of its solutions came in a shotgun blast at the end, while Stack Mode had them peppered throughout its runtime. This is a demonstration of the "ballooning" effect on memory noted above: until a solution is reached, each of those TraceStates is sitting in the Storage object, awaiting processing. Queue Mode is continually dumping in every potential path first, and solving them at the absolute last point. Due to this, if memory is a concern and time isn't, Stack Mode is generally the best bet.
+
+I BELIEVE the growth function of this algorithm is a simple O(n), because the WHILE loop dictates a certain number of steps (check for open spots, move into those spots if they're open, see if we've reached a solution, possibly adding that solution to the "best paths" bucket), and those steps are performed for every TraceState there is to be had. The number of TraceStates expands primarily based on whether the computer is performing under Stack (fewer states) or Queue (more states) Mode, and a large board without a lot of blocked spaces can end up swelling the number of TraceStates the computer is keeping track of very quickly in Queue Mode. It seems, as ever, that one must ask oneself which resource one is more concerned with: time or RAM.
+
+
+TESTING:
+
+As its name might suggest, the CircuitTracerTester is the script that handles putting CircuitTracer through its requisite paces. As we were supplied with the testing script first, devs were able to build the program to the exact specifications it would posit. To that end, CircuitBoard handles file format verification, the battery for which is represented by the 10 valid and 12 invalid .dat files submitted with this program. CircuitBoard is capable of recognizing the following errors in submitted boards:
+
+Possessing too many starting points (invalid1.dat)
+Possessing too many ending points (invalid2.dat)
+Possessing no starting point (invalid4.dat)
+Possessing no ending point (invalid3.dat)
+Possessing board elements other than the five allowed characters of O, X, T, 1, and 2 (invalid5.dat)
+Possessing too many/too few columns according to the dimensions row of the .dat (invalid6, 7, and 8.dat)
+Possessing non-integer values for dimension declaration (invalid9 and 12.dat)
+Possessing too many/too few rows according to the dimensions row of the .dat (invalid10.dat)
+Possessing MORE values than two integers on the dimensions row of the .dat (invalid11.dat)
+
+Beyond this, the Board is also capable of recognizing being given a nonexistent file to process, and will respond accordingly. 
+
+It is worth noting that the program has no way of recognizing impossible boards that are given to it. In such a case, the board return nothing, though the program does not crash. Initially, we placed a notation by the program that the board was unsolveable (valid10), but clearly the testing script was EXPECTING a return of nothing, and the program was adjusted back to its prior state (this also explained how the program was passing valid10 before we even had the most rudimentary algorithm in place).
+
+The program is also capable of recognizing that it has been run with the incorrect arguments (or indeed, without sufficient arguments to begin with), and will inform the user of the expected syntax before returning to the console.
+
+BONUS ROUND - ANALYSIS:
+So, all of these points are answered elsewhere in the text, but I've got, like, a mini-Bible thing going on here, so I'm going to restate the answers to these questions, just to make it easier on grading:
+
+How does the choice of Storage configuration (stack vs queue) affect the sequence in which paths are explored in the search algorithm? (This requires more than a "stacks are LIFOs and queues are FIFOs" answer.)
+Stack Mode plumbs each potential path to its completion before returning and investigating the other forks in the path it started with or found along the way. Queue Mode exhaustively notes every single step every single path is made up of/forks off to, every single step of the way, meaning any number of paths of the same length will reach their ends one after the other from each other.
+
+Is the total number of search states (possible paths) affected by the choice of stack or queue?
+If by that you mean at a time, then yes. Stack will have fewer potential paths in the Storage object than Queue will, because Queue will pile them in as it finds them, causing it to rapidly swell (and reach its greatest amount at about halfway through processing the entire board), especially on larger boards.
+
+Is using one of the storage structures likely to find a solution in fewer steps than the other? Always?
+Fewer steps? No. Stack could POTENTIALLY find the solution faster, but that requires it to start off in the right direction. You have no way of knowing if Stack will immediately start marching in the wrong direction and go down a 200-step path to a dead-end before coming back to try other possibilities.
+
+Does using either of the storage structures guarantee that the first solution found will be a shortest path?
+Yes. Due to Queue functioning through "saturating" the board, so to speak (meaning it spiders out in every potential direction, every time there's a potential direction change given to it), it slowly encompasses the entire board, methodically. This means it essentially bumbles into solutions, but by nature of the fact that it covers the board sequentially, the first solution it finds MUST be the shortest one.
+
+How is memory use (the maximum number of states in Storage at one time) affected by the choice of underlying structure?
+As noted on the "number of search states" question, Queue will balloon memory consumption as it goes along, with its highest point being halfway to completion. Stack stays fairly consistent, exploring one path at a time, while Queue just dumps path possibilities into storage nonstop, until all of them start finding their points of completion.
+
+What is the Big-Oh runtime order for the search algorithm? Does it reflect the maximum size of Storage? Does it reflect the number of board posisions? Does it reflect the number of paths explored? Does it reflect the maximum path length? Is it something else? What is 'n'? What is the primary input factor that increases the difficulty of the task?
+I BELIEVE the growth function of this algorithm is a simple O(n), because the WHILE loop structure lays out four or five steps for every TraceState, and those steps are performed for every TraceState until there aren't anymore. The number of TraceStates (our n) expands primarily based on whether the computer is performing under Stack (fewer states) or Queue (more states) Mode, and a board that's both large and "free" (not a lot of blocked spaces) could end up being pretty rough on memory.
+
+DISCUSSION:
+
+Well. Here we are. The final submission, sans the final exam. It's pretty crazy; definitely feels more "culminatey" than DLL did, although I honestly ended up prouder of DLL. I also didn't think DLL was honestly all that stressful, on that note; it was just really fun to write a comprehensive set like that. CircuitTracer.... Mm. I don't know. I wasn't as satisfied with this one. It doesn't feel as ME as projects usually do when we're done with them. I think that has a lot to do with (and I'm not REALLY complaining; more musing) the fact that we were given far more complete ingredients to work with. Our Lists, sure we were given Node, and we only had to tweak that slightly for the big go-around, but for the most part, all the stuff we did for SLL and DLL was largely homebrew. CT, by comparison, consists of two exception classes we didn't have to write, two processing classes (Storage and TraceState) we didn't have to write, a mostly complete Board class, and the actual CircuitTracer, which really only needed a little bit of loop logic to work through the positions it could find itself in. The TraceState was extraordinarily complete, to my mind; I was really surprised at the toolset we were just GIVEN, and that had a great deal to do with why all we needed to construct were some loops in CT to make it work.
+
+I have to admit, I have very limited experience with Points, and having to write the adjacency logic or the path-drawing logic probably would have been something of a nightmare, and I'm not so hyper confident that I'm sitting here on the mountaintop with a sword in each hand screaming "bring it on" (I didn't even do the EC this time....), but my point is: I experienced the general relief I always feel with an assignment/project being done, but I felt less proud than I normally do.
+
+Not a huge deal. I still love the science, and am actively hungry for more (321 starts in the summer, and I want to see if I can crowbar Python into my brain in the month we have off until then, because this stuff is RAD); I believe that will never change. And Hell, it's cool to finally be on the other side of this class, although that's not to say it WASN'T my favorite class. It most certainly was (and it's one of those few times where I like it enough that if I end up finishing with a B instead of an A, I'm gonna be VERY annoyed with myself). I'm not sure, I think a big part of it was that looking at the name CircuitTracer, I wasn't really sure what to expect, and it turned out to be a bit more mundane than I thought it would be. But, again, that's probably for the better, considering everything else going on in every other class.
+
+
+EXTRA CREDIT:
+
+No! No Stairway! Denied! I couldn't find the time and tenacity to do the EC this time, and believe me when I say it feels like a betrayal, as insane as that might be. My 230L class is an absolute travesty with its final project, and 331 is shambling into its grave as fast and sloppily as it possibly can, and I've elected to devote more time to those courses, so I keep my As in them. EC would be a good chance to see if maybe I DON'T hate GUI's in Java, like I think I do (TicTacToe and LibraryReader were pretty unpleasant experiences; sizing the bloody windows, ugh), but it won't be the deciding factor of keeping an A in 221. That's more on the shoulders of my exam performance, and so I decided not to go the extra mile on this one.
+Ain't happy about it, though.
+
+Prof Vail, if you're reading this, it's been a genuine pleasure, and I hope to run into you again down the line. Take care of yourself, sir.

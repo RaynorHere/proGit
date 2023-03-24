@@ -1,0 +1,23 @@
+Annika McCain
+Dr. Casey Kennington
+CS 354 Programming Languages
+2 Nov 2021
+
+P408:8.20
+  (a) Occasionally one encounters the suggestion that a garbage-collected language
+  should provide a delete operation as an optimization: by explicitly deleteing
+  objects that will never be used again, the programmer might save the garbage 
+  collector the trouble of finding and reclaiming those objects automatically, 
+  thereby improving performance. What do you think of this suggestion? Explain.
+I don't think that this is necessary, in languages that have a 'delete' operation
+such as C (the free() function) and taking something like that to a langauge to a 
+garabe-collected language like Java that will remove the garbage values from the 
+memory storage to try to make a language that does both isn't helpful in terms of 
+system performance as garabage values are executed in the background.
+
+  (b) Alternatively, one might allow the programmer to “tenure” an object, so that 
+  it will never be a candidate for reclamation. Is this a good idea?
+It is a bad idea if a programmer tenures an object and not reclaiming it's memory 
+because it can create memory leakage as occupied memories of the unreferenced objects
+are never used again creating memory leakage, plus the number of garbage values 
+possible in the program can cause the heap memory to become full and cause errors. 

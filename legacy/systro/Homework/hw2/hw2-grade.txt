@@ -1,0 +1,9 @@
+Name: Jim Crowell
+
+README.md file (10 points): 
+	-Ok. You did understand the way the server is supposed to work. However, you ddn't answer the
+	question posed in the assignment - or at least did not acknowldege the question -2
+time server test (40 points):  ok
+Comments:
+
+Grade:  48/50

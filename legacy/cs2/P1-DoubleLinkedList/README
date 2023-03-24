@@ -1,0 +1,104 @@
+*********************************
+* Project 1: Double-Linked List *
+*     CS-221, Sec. 2, Vail      *
+*           04/08/21            *
+*      Jim "JCIII" Crowell      *
+*********************************
+
+
+OVERVIEW:
+
+IUDoubleLinkedList's intended function is to provide an interface which can be used to store and connect data without indexing it directly. Through the use the Node program, DLL creates a series of user-provided data elements that are linked through pointers, instead of ordinal numbers, and these pointers are referenced through each node's next() or previous() function, advancing or regressing through the list as the user pleases.
+IUDLL also includes a ListIterator function, which enables simpler, persistent "paging" for the user. That is, it allows a user to start at or move to a specific place in the list and make changes to it, and leave that iterator there for later use, assuming the list is not changed through the list's inherent functions or the functions of other instances of ListIterator, extrapolated on below.
+
+
+INCLUDED FILES:
+
+The following are necessary for the successful compiling
+of the tester class, and do not affect Double-Linked List:
+BadList.java
+GoodList.java
+IUArrayList.java
+
+DNode.java - Class Source File (ADT)
+IndexedUnsortedList - Class Source File (Interface)
+IUDoubleLinkedList.java - Class Source File
+ListTester - Class Source File (Testing Script)
+README - This
+
+
+COMPILING AND RUNNING:
+
+Ensure that all of the above files are located in the same directory. Navigate to that directory in your terminal, and enter:
+
+$ javac *.java
+
+Or, alternatively, simply enter:
+
+$ javac ListTester.java
+
+As this will cause the compiler to process ListTester, which will automatically cause it to compile every class referenced
+in ListTester (primarily through its enumeration of lists the Tester can be used to test; the existence of this block of code is the primary reason for files such as Bad/Good/IUArrayList.java being included, despite their ostensible lack of involvement with the DoubleLinkedList or its processing)
+
+With the java files processed and compiled, execute:
+
+$ java ListTester
+
+As the ListTester's program is already set to target and test Double-Linked List (hereon, "DLL"). This will run the DLL through a gamut of 9,837 tests, representing every edge case the list could be run from or arrive at (or at least, every edge case our engineer could come up with), representing permutations of both the core functions of the DLL class and its ListIterator function. It is our belief that if the DLL class can handle all possible "exceptional" cases, represented by these situations, it is therefore implementable in a list of arbitrary size.
+
+A final note on execution: do note that the DLL java file itself does not contain a driver class, and therefore does not support being run on its own, at this time. As it stands, only running the ListTester class will produce tangible output.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+The existence of a program like DLL is enabled by the creation of a specific Object (used as a proper noun, as in, "Java is Object-oriented programming"): the Node. Contained in DNode.java (itself a scion of the SNode from Single-Linked List, prior), the Node allows us to contain and connect elements of data in a contiguous manner, without the need for indexing (although they lend themselves nicely to that, should one be so inclined, it somewhat defeats the purpose of a linked list). Less abstractly, the Node can be thought of much like a honeycomb in a bee hive, where the honey within the comb would be the "data". Just as it is possible to have a single comb, as one would at the start of a hive, the class functions to allow more Nodes to be built adjacently to the Node(s) one already has. These Nodes are programmed with the Generic data type, making the class implementable for any type of data a user cares to choose; if it's a data type in Java, the Node can hold it.
+
+Holding to our metaphor, though it is true that honeycombs tend to be built in hexagonal connection from each other, the Double-Linked List gets its name from the fact that each Node is connected to, at maximum, two other nodes: one directly in front of it (preceding it in the list) and one directly behind it (succeeding it in the list). However, our Node functionality confers a benefit that bees have yet to master: the ability to insert new Nodes in the middle of the list. Whether using addAfter(), add([index]), or passing the add() command to an iterator currently in the middle of list somewhere, DLL supports and accounts for inserting the new Node at the indicated point and reattaching the surrounding Nodes in such a way that the rest of the list is uninterrupted.
+
+The other cornerstone to DLL is the ListIterator ("LI"). While it is possible to navigate and administrate a linked list using only its first()/last() & next()/previous() functions, as lists increase in size, this becomes untenably inefficient in rather short order. Because of this, we designed the ListIterator. This function allows one to keep a persistent marker (or indeed, multiple) extant in the linked list, which can be used to page through the list in either direction (returning each value individually as it is passed), remove the most recently-passed element, or add indicated Nodes and elements at the ListIterator's current position. 
+
+On the note of ListIterators and having multiple instances of them running: the ListIterator is "fail-fast", meaning that as soon as it detects that it is out of sync with the list, the LI will "self-destruct", which articulates as a ConcurrentModificationException. This is to ensure that where the LI "thinks" it is in the list and where it truly is are analogous. The alternative presents the problem of an LI pointing at just behind element 2 in a linked list, which would cease to be the case were a user to remove the second element through the remove() function of the DLL class itself or another iterator. However, the ListIterator's overloaded constructor allows one to spawn an instance anywhere in the DLL, so getting back to one's place is not a problem.
+
+For the curious:
+In order to truly express just how much of an improvement the ListIterator is on the functionality of a linked list, we strongly encourage all with a mind for programming and conservation of computation to look directly into the IUDoubleLinkedList.java file. The final update to the program was an effort to rewrite all of the "core" DLL methods (that is, the methods such as add(), remove(), get(), etc, that belong to Double-Linked List, not its ListIterator) as methods which utilize the ListIterator. For comparison's sake, we have left the original code commented out, and our estimates place some 300-350 lines of code fewer now compose the entirety of the DLL class, while still passing all 9,837 tests and, we assume, running significantly faster (if relatively speaking).
+
+
+TESTING:
+
+As is given by the name, the ListTester is the primary means by which we put DLL "through its paces". To that end, ListTester was actually written first, before pen was even set to engineering paper for DLL. ListTester is the product of a series of smaller projects, and thus, for the scope of this assignment, was "inherited" already sufficiently programmed to run a Single-Linked List through a gauntlet. A Single-Linked List ("SLL") functions much like our DLL here does, except Nodes are only connected in a single direction.
+
+Because of this inheritance, the first step was to expand the ListTester to account for new scenarios as the new functionality of DLL induces. That is to say, our list, moving from Single-Linked to Double-Linked, provides a previous() function to go along with its next() function, as well as a ListIterator, which similarly has all the same functionality and more than the basic Iterator SLL contained. We now have a new population of edge cases to test (example: we must now concern ourselves with starting at the Tail node of the list and working backward, inverse to what we did, starting with the head and moving forward, in SLL). This roughly doubled the total number of Scenarios that our ListTester constructed and tested, from 43 cases to 82 cases. Ensuring that our ListTester was properly updated and refitted to account for DLL meant we had a firm goal in front of us, and the ability to know when we had achieved it.
+
+For the sake of completion, the ListTester gauntlet includes the following situational changes:
+
+Going From:						Going To:
+Empty List				->		Single-Element List
+Single-Element List 	-> 		Double-Element List
+Double-Element List 	-> 		Triple-Element List
+Triple-Element List 	->		Double-Element List
+Double-Element List 	-> 		Single-Element List
+Single-Element List		->		Empty List
+
+Each of these represents the DLL being taken from one state to another, both through the DLL's own add()/remove() functions, and those of the ListIterator. The ListTester also accounts for lists changing contents but maintaining consistent population numbers (for instance, starting with a single-element list and ending with a single-element list, but with a DIFFERENT element, and doing so for double-element and triple-element lists as well) through the set() functions, both of the list and the ListIterator. Once it has arrived at these "new" conditions, each list is then put through the full gamut of tests; add(), remove(), get(), set(), indexOf(), etc. Every function of the list is tested on this new state. After, every function of the ListIterator is tested at the new state, multiplied with how many different positions the LI can be in (meaning a single-element list has two places for the iterator: before the only element, and after the only element. A double-element list has three: before element one, after element 2, and in between 1 and 2. A triple-element list has four, and so on and so on), further multiplied by which direction the LI is coming from (meaning whether next() or previous() was called last, to ensure links are being set correctly).
+
+It's worth noting that we do not claim that ListTester accounts for every eventuality or permutation of function. That is a fool's claim, and it is well known that a program is never truly "done"; merely a work in progress that nears completion (and thus, perfection) over time, but never fully catches it. What we ARE prepared to claim is that the likelihood of encountering an unaccounted-for situation in our DLL is rendered acceptably low by the existence of a 100% pass rate that it earns from a tester that throws nearly 10,000 unique function cases at it and its ListIterator. The ability of DLL and LI to function as they should in this many hypotheticals gives us a great sense of confidence (and accomplishment!), and we at JCIII Industries (AKA "The Goblin Cave", AKA "The Cellar That Time Forgot") proudly submit the product of our labors for evaluation.
+
+
+DISCUSSION:
+
+I know this isn't our final assignment, so it's really not much of a time for "what a long, strange trip it's been", but we ARE significantly farther along, and more developed, than we were the last time I submitted a README file. I genuinely cannot BELIEVE how different I feel with CS, now vs semester's beginning, or ESPECIALLY now vs back in CS-121. I'm not sure what caused it, but I FELT this stuff click a month or two ago, and there's a chasm of difference between now and then. I am 100% willing to accept if I've somehow, extremely shortsightedly, screwed this up and I'm not as good as I think I am, but I cannot lie: I feel GOOD about Computer Science, and I feel GOOD about my prospects in this field, and I haven't felt that way about an academic discipline in a very, very long time. Granted, part of that is borne of the fact that we've been working with new iterations of the List, from Array to SLL to DLL now, for about a month, so there's not quite as much uphill to do with every new assignment, but it's more than that. My README for GridMon references being unable to read StackTraces or make much use of the Debugger, and those aren't problems I have anymore. My first passes at code are RIGHT more of the time now, and when I'm looking at code that isn't working, I can generally intuit where the problem is and fix it myself (still have mad love for the tutors, though; I will be looking to join their ranks). People in CS classes that I know come to me with questions and not only can I help them fix the problems they're having, I can accurately and thoroughly (upon request, because I'm not a monster) explain why it wasn't working THEN and DOES work after we fix it. I never knew I would enjoy programming and coding this much, and while I always wished to be good at it, I never thought I'd feel this confident.
+
+And I'd still feel that way even if I got an F-- on this project due to my own bumbling. Just look at what happened with Lists 2, or as I call it, the Schindler's List (full points on the rubric, everything programmed like it should be EXCEPT I NEVER CALLED THE TESTS BECAUSE I WASN'T PAYING ATTENTION, SO 4/20. It LOOKED great, but it didn't WORK great. Hence, Schindler's List). It doesn't mean I'm not picking this stuff up or that I won't have a potentially-damn-bright future ahead of me.
+
+DOES mean I'm going to have to slap myself in the head and pay more attention next time, though.
+
+Beyond that, I didn't have a lot of struggle with this assignment. There was one flabbergasting point where exactly ONE of NINE THOUSAND, EIGHT HUNDRED AND THIRTY-SEVEN tests was failing, which absolutely blew me away. I couldn't figure out how one test could be so uniquely broken that none of the others were failing. After all, if the Scenario builder was the problem, every test running that Scenario would fail. If it was the remove() function, ostensibly none of the remove() tests should be completing. How do you biff it on ONE test in almost ten thousand, when the tests are so interrelated?
+Turns out, your misassign your previousNodes on ONE LINE of ONE FUNCTION in the core of the program. Then, when the iterator tries to move backward from the affected Node, it gets nothing, and when remove is called, the program crashes. THAT one took a while to rectify, but that was after a four-hour late night session and my brain was slowing down.
+
+This has been far and away my favorite class this semester, and I really hoped it would be, right from the beginning, when we were promised it was the greatest difficulty spike in the CS family. Before, I thought I wanted to be a computer scientist. Now, I'm absolutely more sure than I've ever been.
+
+
+EXTRA CREDIT:
+
+I mean.... Was there? Professor Vail mentioned going back and rewriting DLL to use the ListIterator in its core functions, once the LI was done, as an "extra" thing we could do, and never outright said it would be extra credit. I meant to ask if it would count as such, but managed to forget. I confess, I did it for love of the game (and a howling, all-consuming void where "other people" are supposed to be in my life, but that's fine); I didn't do it for EC. That said, you know, if EC were to be AVAILABLE for it, I would in no way turn my nose up at it.
+Also, I WOULD mention that we have yet to see the Extra Credit for those prospective professor lectures on our Grades just yet. Those are ten points I'm extremely banking on making up for my Schindler's List grade.

@@ -1,0 +1,15 @@
+Name: Jim Crowell
+README.md file (5 points):  
+	-No reflection section -1
+	-Please name the file README.md (and not readme.md) -1
+Ping pong server/client: 
+	-Version 1 features [basic game with fixed roles, single-threaded server and client] (20
+	points): ok
+	-Version 2 features [distributed coin toss] (10 points): ok
+	-Version 3 features [multi-threaded server, single-threaded client] (15 points):  ok
+
+Multi-threaded servents (+5 extra credit): 
+
+Comments:
+
+Grade:  48/50

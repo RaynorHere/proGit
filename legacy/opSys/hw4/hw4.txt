@@ -1,0 +1,110 @@
+Annika McCain
+Dr. Casey Kennington
+CS 354 Programming Languages
+28 Sept 2021
+
+  P209.4.1
+  (E = epsilon)
+  Basic results from automata theory tell us that the language L = a^n b^n c^n = E,
+  abc, aabbcc, aaabbbccc , . . . is not context free. It can be captured, however,
+  using an attribute grammar. Give an underlying CFG and a set of attribute rules 
+  that associates a Boolean attribute ok with the root R of each parse tree, such that
+  R.ok = true if and only if the string corresponding to the fringe of the tree is in L.
+    hint: the attribute on the rule for the root node should be something like "S.ok =
+    [some boolean check function]". That is, S.ok evaluates to true if the conditions of
+    the language are met. The conditions of the language are, simply, that there are an
+    equal number of a, b, and c characters. You'll first need to write a CFG that can
+    accept such a language and then add in the attributes to each rule)
+
+S -> ABC   (S.ok = if A.count = B.count = C.count)
+A -> a     (A.count_left := A.count_right + 1) | E (A.val := 0)
+B -> b     (B.count_left := B.count_right + 1) | E (B.val := 0)
+C -> c     (C.count_left := C.count_right + 1) | E (C.val := 0)
+
+
+  P286:6.1
+  We noted in Section 6.1.1 that most binary arithmetic operators are left-associative
+  in most programming languages. In Section 6.1.4, however, we also noted that most
+  compilers are free to evaluate the operands of a binary operator in either order. 
+  Are these statements contradictory? Why or why not?
+
+While at first glance the they might seem contradictory these statements aren't. The
+associative property defines the order that binary operators are applied in expression but
+doesn't specify the order of precedence over other operators. In fact both of these rules
+don't specify the order the compiler has to evaluate the operands so it is free to evaluate
+left-to-right or right-to-left.
+
+
+  P287:6.8
+  Languages that employ a reference model of variables also tend to employ automatic 
+  garbage collection. Is this more than a coincidence? Explain.
+
+It is definitely more than a coincidence that languages employ a reference model of
+variables also tend to employ automatic garbage collection because when a reference 
+model is used in a language it will have different objects having similar values 
+referring to the same memory location and making it difficult for the programmer to
+track the number of references (or there aren't any reference) the given object has 
+so becomes essential for the language to have an automatic garbage collection.
+
+  P289:6.25
+  Consider a mid-test loop, here written in C, that looks for blank lines in its input:
+  for (;;) {
+    line = read_line();
+    if (all_blanks(line)) break;
+    consume_line(line);
+  }
+  Show how you might accomplish the same task using a while or do ( repeat ) loop, if
+  mid-test loops were not available. (Hint: One alternative duplicates part of the code;
+  another introduces a Boolean flag variable.) How do these alternatives compare to the
+  mid-test version?
+
+line = read_line();
+while(!all_blanks(line)){
+  consume_line(line);
+  line = read_line();
+}
+--------or-------- 
+bool midtest = false;
+do {
+line = read_line();
+if(all_blanks(line)) midtest = true;
+consume_line(line);
+} while (!midtest);
+
+When using while and do-while loops are used instead of a midtest loop more memory is
+required as code is repeated. Also midtest loops are usually easier to understand than
+some while and do-while loops might not be.
+
+  P290:6.26
+  Rubin [Rub87] used the following example (rewritten here in C) to argue in favor of a
+  goto statement:
+  int first_zero_row = -1;
+  /* none */
+  int i, j;
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+      if (A[i][j]) goto next;
+    }
+    first_zero_row = i;
+    break;
+    next: ;
+  }
+  The intent of the code is to find the first all-zero row, if any, of an n × n matrix.
+  Do you find the example convincing? Is there a good structured alternative in C? In any
+  language?
+
+As far as I know I don't think that is is a convicing code to use, though it will work,
+because goto statements lead to nonsequential code, effects readability, and that is seen
+as bad programming practice. Though I believe a good alternative would be:
+
+  int first_zero_row = -1;
+  int i, j;
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+      if (A[i][j]) break;
+    }
+    if (j == n){
+      first_zero_row = i;
+      break;
+    }
+  }

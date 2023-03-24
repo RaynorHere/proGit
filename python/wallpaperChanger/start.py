@@ -1,8 +1,13 @@
-#!/usr/bin/env python3
+"""
+Just the start wrapper for paperChanger
+Assumes both paperChange and start are in the same directory
 
-# Just the start wrapper for wallpaperChanger
+Completed   3/21/2023
+Shelved     3/24/2023
+"""
 import subprocess
 import sys
+import os
 
 subprocess.run(
-    [sys.executable, ''])  # Provide path of directory containing intended images
+    [sys.executable, os.path.abspath(sys.argv[0])])

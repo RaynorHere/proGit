@@ -1,0 +1,178 @@
+Annika McCain
+Dr. Casey Kennington
+CS 354 Programming Languages
+21 Sept 2021
+
+  P167 3.1
+  Indicate the binding time (when the language is designed, when the program is
+  linked, when the program begins execution, etc.) for each of the following
+  decisions in your favorite programming language and implementation. Explain any
+  answers you think are open to interpretation.
+
+For C:
+   -The number of built-in functions (math, type queries, etc.)
+Built-in functions are defined by standard library and will be bound at the
+language design time.
+   -The variable declaration that corresponds to a particular variable reference 
+    (use)
+Variable declaration is bound at compiler time and using static scope.
+   -The maximum length allowed for a constant (literal) character string
+Maximum length for a constant character string is decided at language implementation
+time.
+   -The referencing environment for a subroutine that is passed as a parameter
+Static scope is used and that specifies that the referencing environment depends on 
+the nesting of subroutines that it is declared in. And is bound at program writing 
+time.
+   -The address of a particular library routine
+The address of a library function is bound at link time and is unknown until runtime.
+   -The total amount of space occupied by program code and data
+The total amount of space is bound at runtime.
+
+  P167 3.4
+  Give three concrete examples drawn from a programming language with which
+  you are familiar in which a variable is live but not in scope.
+class Something {
+  public static void main(String[] args){
+    String x = "Hello!";
+    print();
+  }
+  public static void print(){
+    System.out.println(x); //x was a local variable and is not reachable
+  }
+}
+-----------------------------------------------------------------------------
+class Or {
+  public static void main(String[] args){
+    for(int i = 5; i >= 0; i--){
+      System.out.println(i);
+    }
+    System.out.println(i); //i was declared in the loop and is not reachable
+  }
+}
+-----------------------------------------------------------------------------
+class Other {
+  public static void main(String[] args){
+    rand();
+    System.out.println(a); //a was declared in the method and unreachable for main
+  }
+  public static void rand(){
+    int a = 10;
+  }
+}
+
+
+  P167 3.5
+  Consider the following pseudocode.
+    1. procedure main()
+    2.      a : integer := 1
+    3.      b : integer := 2
+
+    4.      procedure middle()
+    5.           b : integer := a
+
+    6.           procedure inner()
+    7.                print a, b
+
+    8.           a : integer := 3
+
+    9.           –– body of middle
+    10.         inner()
+    11.         print a, b
+
+    12.    –– body of main
+    13.    middle()
+    14.    print a, b
+
+  Suppose this was code for a language with the declaration-order rules of C (but
+  with nested subroutines)—that is, names must be declared before use, and the
+  scope of a name extends from its declaration through the end of the block. At
+  each print statement, indicate which declarations of a and b are in the referencing
+  environment. What does the program print (or will the compiler identify static
+  semantic errors)? Repeat the exercise for the declaration-order rules of C# (names
+  must be declared before use, but the scope of a name is the entire block in which
+  it is declared) and of Modula-3 (names can be declared in any order, and their
+  scope is the entire block in which they are declared).
+    (Hint: each of the three languages will produce different output; one of the
+    languages will produce an error.)
+For C:
+line 7 prints '11'
+line 11 prints '31'
+line 14 prints '12'
+
+For C#:
+An error will be thrown on line 5 because b is assigned value a before a's 
+declaration.
+
+For Modula-3:
+line 7 prints '33'
+line 11 prints '33'
+line 14 prints '12'
+
+
+  P169 3.6a
+  Consider the following pseudocode, assuming nested subroutines and static
+  scope.
+    procedure main()
+        g : integer
+
+        procedure B(a : integer)
+             x : integer
+
+             procedure A(n : integer)
+                  g := n
+
+             procedure R(m : integer)
+                 write_integer(x)
+                 x /:= 2 –– integer division
+                 if x > 1
+                      R(m + 1)
+                 else
+                       A(m)
+
+             –– body of B
+            x := a × a
+            R(1)
+
+        –– body of main
+        B(3)
+        write_integer(g)
+
+  (a) What does this program print?
+'9423'
+
+  P171 3.14
+  Consider the following pseudocode:
+        x : integer   –– global
+
+        procedure set_x(n : integer)
+                  x := n
+
+         procedure print_x()
+                    write_integer(x)
+
+         procedure first()
+                  set_x(1)
+                  print_x()
+
+         procedure second()
+                  x : integer
+                  set_x(2)
+                  print_x()
+
+         set_x(0)
+         first()
+         print_x()
+         second()
+         print_x()
+
+  What does this program print if the language uses static scoping? What does it
+  print with dynamic scoping? Why?
+Static scoping: 
+1122
+Dynamic scoping: 
+1121
+For both scoping the program will set the global x to 1 so the so the first two
+prints are 1 and then in the second method static will set the global to 2 and
+dynamic will have a local variable of 2 and they will both print two. And since
+the global variable in static is 2 it will print 2 again while the other program
+the global variable stayed 1 so it would print 1.

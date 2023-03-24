@@ -1,0 +1,61 @@
+																Jim Crowell
+																CS354 - ProgLang
+																Kennington, W&F: 930-1045
+
+P462:9.1
+
+Describe as many ways as you can in which functions in imperative programming languages differ from functions in mathematics.
+
+Well, for starters, because imperative programming functions more on explicitly prescribing HOW the designer wants the computer to accomplish a task (as compared to declarative programming, which is more of a WHAT one wants, allowing the computer more of what would pass for "autonomy" in the doing of), imperative functions tend to have more fine-detail control than mathematical functions do. There are multiple ways of achieving the same goal, while mathematics are quite rigid in their structure. If I asked you to derive x^3 +  55x^2 + 86, you are GOING to end up with 2x^2 + 110x + 0, guaranteed, because that is THE answer. There is a specific, correct way of performing a derivation, and there are no other avenues open to you. By contrast, in imperative programming, even IF the answer is the exact same every time, the designer has a greater deal of control over what the computer does to achieve its goals. That's everything from as gross a level as division of labor (the driver class needn't necessarily process all the functions within itself; one can easily create subroutines to hand off "chunks" of work to, and defining these subroutines relates back to the next point) to as fine of control as specifying HOW to get individual values that go into the processing of those functions. It's rare you'll be on so fine a level, but due to the way computers store data, specifying between multiplying a number by itself x number of times or utilizing an exponent function very much can offer you different answers, despite the same values going in. This also relates to how in mathematics, designed and orchestrated by humans, numbers are numbers and will behave the same way every single time. Computers, on the other hand, offer options for what "kind" of numbers we want to work with. Integer division and truncation are wonderful examples of this: depending on which type one bestows upon these values, they will behave differently, which is unique to this system. In no mathematical setting can you divide 2 by 3 and end up with 0; even ROUNDING gets you 1, because .6 repeating > .5, therefore 1. So when performing math functions with a computer, the rules are still 100% set in stone, but those rules have built-in modifiability/variance than would what we could call "standard math"
+(I am aware this was a bit on the long side; having been recommended to improve my concision on the very first book assignment gave this a very pleasant "coming full circle" feel)
+
+
+P463:9.3
+
+Using your favorite language and compiler, write a program that can tell the order
+in which certain subroutine parameters are evaluated.
+
+class Evaluator {
+
+	public Evaluator (String input) {
+	
+	System.out.println(input);
+	
+	}
+	
+	public static void NewRoutine(Evaluator numberOne, Evaluator numberTwo) {
+		
+		// Doesn't actually need to DO anything	
+	}
+	
+	
+	class Demonstrate {
+	
+		public static void main (String[] args) {
+		
+			Evaluator.NewRoutine (new Evaluator ("First"), new Evaluator ("Second"));
+		
+		}
+	
+	
+	}
+
+}
+
+Output:
+First Second
+
+
+P465:9.17
+
+Why do you suppose that variable-length argument lists are (were) so seldom supported
+by high-level programming languages?
+
+The tricky thing with variable-length argument lists is that even as they offer the user more flexibility as to how to make a given program work, they geometrically (at minimum) increase the complexity for the designer of that program that the user is interacting with, and even the increased flexibility they offer must be curtailed at some point, because accounting for infinite possibilities is literally impossible. 
+Most designers would (and still do) try to avoid overloading the array (which is the object through which arguments are delivered), equally as much to give themselves a break when having to deal with questionable numbers of parameters to take into account. Still, the update to JDK5 seems to have allowed truly infinite argument options for Java programs by specifying ellipses in the program when outlining parameters for a function. While that's all well and good (and would be useful for moving a collection of files out of a folder that is so full that GUIs literally crash when trying to open it and "mv" turns you away for having too many arguments, just speaking from experience), the amount of coding that goes into it is really just prohibitively plentiful, and every additional argument passed is another opportunity for any one of a multitude of errors to happen (type mismatches spring immediately to mind).
+I think variable-length argument lists were and mostly still are such a rarity specifically because the power is awesome, but the requirements are just too impractical; the increased workload of having to break an entire operation down into smaller pieces and/or repetitive calls to the same function is still a path of lesser resistance than it would be to create an algorithm or function that can "do it all" without being subject to being buggier than a breadbox bursting with boundless bugs.
+
+
+
+
+

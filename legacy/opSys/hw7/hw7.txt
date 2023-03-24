@@ -1,0 +1,47 @@
+Annika McCain
+Dr. Casey Kennington
+CS 354 Programming Languages
+17 Nov 2021
+
+P462:9.1
+  Describe as many ways as you can in which functions in imperative programming
+  languages differ from functions in mathematics.
+The main differences between functions in imperative programming languages and 
+functions in mathematics are that we have math functions that can have an 
+infinite set of numbers but a program will have to have a finite amount. In
+programs can have code that will work with user input but functions in math
+are mapping between two sets of values. AND in math you can map between two 
+empty sets but you are able to in programming. Also as programming languages 
+rely on a parameter list instead of the mapping of normal math.
+
+P463:9.3
+  Using your favorite language and compiler, write a program that can tell the
+  order in which certain subroutine parameters are evaluated.
+class Printer{
+  public Printer(String input) {
+    System.out.println(input);
+  }
+
+  public static void work(Printer printOne, Printer printTwo, Printer printThree) {
+    // code here
+  }
+}
+
+class Main{
+  public static void main (String[] args) {
+    Printer.work(new Printer("Something"), new Printer("or"), new Printer("else"));
+  }
+}
+
+Printed to the console:
+Something
+or
+other
+
+P465:9.17
+  Why do you suppose that variable-length argument lists are (were) so seldom
+  supported by high-level programming languages? 
+I guess because so many languages are strongly (statically) typed then using 
+variable-length arguments won't be type safe and can produce unexpected results.
+Because at compile time the number of arguments have no data type and can cause 
+mismatching to occur.

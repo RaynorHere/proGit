@@ -1,0 +1,132 @@
+Annika McCain
+Dr. Casey Kennington
+CS 354 Programming Languages
+13 Sept 2021
+
+  P108:2.12 (a & b only): Consider the following grammar:
+  G → S $$
+  S → A M
+  M → S | epsilon
+  A → a E | b A A
+  E → a B | b A | epsilon
+  B → b E | a B B
+  (a) Describe in English the language that the grammar generates (e.g., "this 
+  makes a bunch of a's and b's that.....")
+The given grammar accepts all strings that are in the alphabet {a,b} where the
+number of a's are greater than the number of b's. A null string is not accepted
+and the symbol '$$' represents the end of the  string.
+
+  (b) Show a parse tree for the string a b a a
+           G
+        /     \
+       S       $$
+    /     \
+   A       M
+  /\        \
+ a  E        S
+    /\       /\
+   b  A     A  M
+      /\    /\  \
+     a  E  a  E epsilon
+        |      \
+     epsilon epsilon
+
+  P108:2.13 (a & b only):
+  stmt → assignment
+       → subr call
+  assignment → id := expr
+  subr call → id ( arg list )
+  expr → primary expr tail
+  expr tail → op expr
+            → epsilon
+  primary → id
+          → subr call
+          → ( expr )
+  op → + | - | * | /
+  arg list → expr args tail
+  args tail → , arg list
+            → epsilon
+  (a) construct a tree for the parse string foo(a, b)
+              stmt
+                |
+             subr call
+         /   |     \       \
+      id     (   arg list   )
+       |         /      \
+      foo     expr       args tail
+             /   \         /   \
+      primary expr tail   ,   arg list
+          |      |           /        \
+         id   epsilon      expr    args tail
+          |               /    \        \
+          a         primary expr tail  epsilon
+                       |        |
+                      id     epsilon
+                       |
+                       b
+
+  (b) Give a canonical (right-most) derivation of the same string
+stmt -> subr call
+     -> id (args list)
+     -> id (expr args tail)
+     -> id (expr , arg list)
+     -> id (expr , expr args tail)
+     -> id (expr, expr epsilon)
+     -> id (expr, primary expr tail epsilon)
+     -> id (expr, primary expr tail)
+     -> id (expr, primary epsilon)
+     -> id (expr, primary)
+     -> id (expr, id)
+     -> id (primary expr tail , id)
+     -> id (primary epsilon, id)
+     -> id (primary , id)
+     -> id (id , id)
+      (foo) (a) (b)
+
+  P109:2.17: Extend the grammar of Figure 2.25 to include if statements and
+  while loops, along the lines suggested by the following examples:
+  abs := n
+  if n < 0 then abs := 0 - abs fi
+  sum : = 0
+  read count
+  while count > 0 do
+     read n
+     sum := sum + n
+     count := count - 1
+  od
+  write sum
+program −→ stmt list $$
+stmt_list −→ stmt_list stmt
+stmt_list −→ stmt
+stmt −→ id := expr
+stmt −→ read id
+stmt −→ write expr
+expr −→ term
+expr −→ expr add_op term
+term −→ factor
+term −→ term mult_op factor
+factor −→ ( expr )
+factor −→ id
+factor −→ number
+add_op −→ +
+add_op −→ -
+mult_op −→ *
+mult_op −→ /
+
+Added:
+stmt −→ if cond then stmt_list fi
+     −→ while cond do stmt_list od
+cond −→ expr oper expr
+oper −→ <
+     −→ >
+     −→ <=
+     −→ >=
+     −→ ==
+     −→ !=
+     −→ <>
+
+  Some Hints: 
+  You will use a lot of epsilons (i.e., the empty char) for 2.12. 
+  For 2.17, you will start with the grammar in Figure 2.25 and then you will
+  extend it to be able to handle if statements and while loops. Some examples
+  are given in the question as to what kind of syntax would be used.

@@ -1,0 +1,431 @@
+
+HOME-USE END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE IMPORTANT READ
+CAREFULLY: This Home-Use End-User License Agreement ("HOME-USE EULA") is a
+legal agreement between you (an individual) and Microsoft Corporation for the
+Microsoft software that accompanies this HOME-USE EULA, which includes
+associated media and Microsoft Internet-based services ("Software"). An
+amendment or addendum to this HOME-USE EULA may accompany the Software. YOU
+AGREE TO BE BOUND BY THE TERMS OF THIS HOME-USE EULA BY INSTALLING, COPYING,
+OR USING THE SOFTWARE. IF YOU DO NOT AGREE, DO NOT INSTALL, COPY, OR USE THE
+SOFTWARE; YOU MAY RETURN IT TO YOUR PLACE OF PURCHASE FOR A FULL REFUND, IF
+APPLICABLE. YOU MAY ONLY INSTALL AND USE THE SOFTWARE IF YOU ARE (A) EMPLOYED
+BY AN ORGANIZATION THAT HAS A MICROSOFT VOLUME LICENSE AGREEMENT WITH SOFTWARE
+ASSURANCE (THE "CUSTOMER"); AND (B) THE PRIMARY USER OF A LICENSED COPY OF THE
+SOFTWARE WITH ACTIVE SOFTWARE ASSURANCE. 1. GRANT OF LICENSE. Microsoft grants
+you the following rights, provided that you comply with all terms and
+conditions of this HOME-USE EULA: 1.1 Installation and use. You may install
+and use a copy of the Software on one personal computer or other device
+located within your home. 1.2 License Grant for Remote Desktop. You may use
+remote access technologies, such as the Remote Desktop features in Microsoft
+Windows or NetMeeting, to access and use your licensed copy of the Software,
+provided that only the primary user of the device hosting the remote desktop
+session accesses and uses the Software with a remote access device. These
+remote desktop rights do not permit you to use the Software on both the device
+hosting the remote desktop session and the access device at the same time. 1.3
+License Grant for Remote Assistance. You may permit any device to access and
+use your licensed copy of the Software for the sole purpose of providing you
+with technical support and maintenance services. 1.4 License Grant for Media
+Elements. The Software may include certain photographs, clip art, templates,
+shapes, animations, sounds, music and video clips that are identified in the
+Software for your use (together "Media Elements"). You may copy and modify the
+Media Elements, and license, display and distribute them, along with your
+modifications as part of your software products and services, including your
+web sites, but you are not licensed to do any of the following: " You may not
+sell, license or distribute copies of the Media Elements by themselves or as
+part of any collection, product or service if the primary value of the product
+or service is in the Media Elements. " You may not grant customers of your
+product or service any rights to license or distribute the Media Elements. "
+You may not license or distribute any of the Media Elements that include
+representations of identifiable individuals, governments, logos, initials,
+emblems, trademarks, or entities for any commercial purposes or to express or
+imply any endorsement or association with any product, service, entity, or
+activity. " You may not create obscene or scandalous works, as defined by
+federal law at the time the work is created, using the Media Elements. In
+addition, you must (a) indemnify and defend Microsoft from and against any
+claims or lawsuits, including attorneys' fees that arise from or result from
+the licensing, use or distribution of Media Elements as modified by you, and
+(b) include a valid copyright notice on your products and services that
+include the Media Elements. 1.5 License Grant for Documentation. The
+documentation that accompanies the Software is licensed for internal,
+non-commercial reference purposes only. 1.6 License Grant for Templates. The
+Software may include document templates. You may copy and modify the document
+templates available as part of the Microsoft software that accompanies this
+HOME-USE EULA and distribute such templates along with your modifications for
+use by other licensees of the Software. You also may copy, modify and
+distribute the templates available through related Internet-based services
+along with your modifications for use by other licensees of the Software, but
+only for personal or commercial correspondence involving person-to-person
+communication. You are not licensed to do any of the following: " You may not
+sell, resell, license, rent, lease, lend, or otherwise transfer for value, the
+templates. " You may not distribute the templates available via Internet-based
+services as part of any product or service. " You may not copy or post any
+templates available through Internet-based services on any network computer or
+broadcast it in any media. You must indemnify and defend Microsoft against any
+claims or lawsuits, including attorneys' fees, that arise from or result from
+the licensing or distribution of the templates as modified by you. 2.
+DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS 2.1 Expiration of Rights. Your
+rights to the Software set forth in Section 1 shall automatically expire if at
+any time you (a) are no longer employed by the Customer; or (b) are no longer
+the primary user of a licensed copy of the Software with active Software
+Assurance; or (c) install any other version of the Software that is subject to
+a HOME-USE EULA. In either such event, you must cease use of the Software,
+uninstall it from the computer or device on which you installed it and destroy
+all copies of the Software and all of its component parts. 2.2 Government
+Employees. It is Microsoft's intent that the terms of this HOME USE EULA be in
+compliance with all applicable laws and regulations. Therefore, if the
+Customer that employs you is the U.S. Government or any state or local
+government within the United States, the Software is licensed to you for the
+sole use and benefit of the Customer for Customer purposes only, and may not
+be used for your personal use unless so authorized by Customer's ethics
+office. If the Customer that employs you is a government outside the United
+States, you can use the Software for your personal needs unless otherwise
+prohibited by any applicable laws, policies or regulations, in which event the
+Software is licensed to you for the sole use and benefit of the Customer. 2.3
+Mandatory Activation. THERE ARE TECHNOLOGICAL MEASURES IN THIS SOFTWARE THAT
+ARE DESIGNED TO PREVENT UNLICENSED USE OF THE SOFTWARE. You may not be able to
+exercise your rights to the Software under this HOME-USE EULA after a finite
+number of product launches unless you activate your copy of the Software in
+the manner described during the launch sequence. You may also need to
+reactivate the Software if you modify your computer hardware or alter the
+Software. Microsoft will use those measures to confirm you have a legally
+licensed copy of the Software. If you are not using a licensed copy of the
+Software, you are not allowed to install the Software or future Software
+updates. Microsoft will not collect any personally identifiable information
+from your device during this process. 2.4 Internet-Based Services. You may not
+use any Microsoft Internet-based services associated with the Software in any
+manner that could damage, disable, overburden, or impair such services or
+interfere with any other party's use and enjoyment of them. You may not
+attempt to gain unauthorized access to any service, account, computer systems
+or networks associated with the Internet-based services. 2.5
+Speech/Handwriting Recognition. If the Software includes speech and/or
+handwriting recognition component(s), you should understand that speech and
+handwriting recognition are inherently statistical processes; that recognition
+errors are inherent in the processes; that it is your responsibility to
+provide for the handling of such errors and to monitor the recognition
+processes and correct any errors. Neither Microsoft nor its suppliers shall be
+liable for any damages arising out of errors in the speech and handwriting
+recognition processes. 2.6 Report-Writing Runtime Software Limitations. The
+Software may contain reportwriting runtime software ("Runtime Software").
+Other than use with the Software, you may not use the Runtime Software with
+any other software application nor use the Runtime Software as part of any
+process or system that is used to automatically deliver, share or distribute
+documents or other work created using the Runtime Software. 3. RESERVATION OF
+RIGHTS AND OWNERSHIP. Microsoft reserves all rights not expressly granted to
+you in this HOME-USE EULA. The Software is protected by copyright and other
+intellectual property laws and treaties. Microsoft or its suppliers own the
+title, copyright, and other intellectual property rights in the Software. The
+Software is licensed, not sold. This HOME-USE EULA does not grant you any
+rights to trademarks or service marks of Microsoft. 4. LIMITATIONS ON REVERSE
+ENGINEERING, DECOMPILATION, AND DISASSEMBLY. You may not reverse engineer,
+decompile, or disassemble the Software, except and only to the extent that
+such activity is expressly permitted by applicable law notwithstanding this
+limitation. 5. NO RENTAL/COMMERCIAL HOSTING. You may not rent, lease, lend or
+provide commercial hosting services with the Software. 6. CONSENT TO USE OF
+DATA. You agree that Microsoft and its affiliates may collect and use
+technical information gathered as part of the product support services
+provided to you, if any, related to the Software. Microsoft may use this
+information solely to improve our products or to provide customized services
+or technologies to you and will not disclose this information in a form that
+personally identifies you. 7. LINKS TO THIRD PARTY SITES. Microsoft is not
+responsible for the contents of any third-party sites or services, any links
+contained in third-party sites or services, or any changes or updates to
+third-party sites or services. Microsoft is providing these links and access
+to third-party sites and services to you only as a convenience, and the
+inclusion of any link or access does not imply an endorsement by Microsoft of
+the third-party site or service. 8. ADDITIONAL SOFTWARE/SERVICES. This
+HOME-USE EULA applies to updates, supplements, add-on components, or
+Internet-based services components, of the Software that Microsoft may provide
+to you or make available to you after the date you obtain your initial copy of
+the Software, unless they are accompanied by separate terms. Microsoft
+reserves the right to discontinue Internet-based services provided to you or
+made available to you through the use of the Software. 9. UPGRADES. To use
+Software identified as an upgrade, you must first be licensed for the software
+identified by Microsoft as eligible for the upgrade. After installing the
+upgrade, you may no longer use the original software that formed the basis for
+your upgrade eligibility, except as part of the upgraded software. 10.
+ACADEMIC EDITION SOFTWARE. To use Software identified as "Academic Edition" or
+"AE," you must be a "Qualified Educational User." For qualification-related
+questions, please contact the Microsoft Sales Information Center/One Microsoft
+Way/Redmond, WA 98052-6399 or the Microsoft subsidiary serving your country.
+11. EXPORT RESTRICTIONS. You acknowledge that the Software is subject to U.S.
+export jurisdiction. You agree to comply with all applicable international and
+national laws that apply to the Software, including the U.S. Export
+Administration Regulations, as well as end-user, end-use, and destination
+restrictions issued by U.S. and other governments. For additional information
+see <http://www.microsoft.com/exporting/>. 12. SEPARATION OF COMPONENTS. The
+Software is licensed as a single product. Its component parts may not be
+separated for use on more than one device. 13. SOFTWARE TRANSFER. Internal.
+You may transfer your copy of the Software to a different device. After the
+transfer, you must completely remove the Software from the former device. No
+Transfer to Third Party. You may not transfer, including by way of indirect
+transfer, such as a consignment, this HOME-USE EULA, the Software or the
+Certificate of Authenticity (if applicable) to any other end user. 14.
+TERMINATION. Without prejudice to any other rights, Microsoft may terminate
+this HOME-USE EULA if you fail to comply with the terms and conditions of this
+HOMEUSE EULA. In such event, you must destroy all copies of the Software and
+all of its component parts. 15. LIMITED WARRANTY FOR SOFTWARE ACQUIRED IN THE
+US AND CANADA. Microsoft warrants that the Software will perform substantially
+in accordance with the accompanying materials for a period of ninety (90) days
+from the date of receipt. If an implied warranty or condition is created by
+your state/jurisdiction and federal or state/provincial law prohibits
+disclaimer of it, you also have an implied warranty or condition, BUT ONLY AS
+TO DEFECTS DISCOVERED DURING THE PERIOD OF THIS LIMITED WARRANTY (NINETY
+DAYS). AS TO ANY DEFECTS DISCOVERED AFTER THE NINETY DAY PERIOD, THERE IS NO
+WARRANTY OR CONDITION OF ANY KIND. Some states/jurisdictions do not allow
+limitations on how long an implied warranty or condition lasts, so the above
+limitation may not apply to you. Any supplements or updates to the Software,
+including without limitation, any (if any) service packs or hot fixes provided
+to you after the expiration of the ninety day Limited Warranty period are not
+covered by any warranty or condition, express, implied or statutory.
+LIMITATION ON REMEDIES; NO CONSEQUENTIAL OR OTHER DAMAGES. Your exclusive
+remedy for any breach of this Limited Warranty is as set forth below. Except
+for any refund elected by Microsoft, YOU ARE NOT ENTITLED TO ANY DAMAGES,
+INCLUDING BUT NOT LIMITED TO CONSEQUENTIAL DAMAGES, if the Software does not
+meet Microsoft's Limited Warranty, and, to the maximum extent allowed by
+applicable law, even if any remedy fails of its essential purpose. The terms
+of Section 17 ("Exclusion of Incidental, Consequential and Certain Other
+Damages") are also incorporated into this Limited Warranty. Some
+states/jurisdictions do not allow the exclusion or limitation of incidental or
+consequential damages, so the above limitation or exclusion may not apply to
+you. This Limited Warranty gives you specific legal rights. You may have other
+rights which vary from state/jurisdiction to state/jurisdiction. YOUR
+EXCLUSIVE REMEDY. Microsoft's and its suppliers' entire liability and your
+exclusive remedy for any breach of this Limited Warranty or for any other
+breach of this HOME-USE EULA or for any other liability relating to the
+Software shall be, at Microsoft's option from time to time exercised subject
+to applicable law, (a) return of the amount paid (if any) for the Software, or
+(b) repair or replacement of the Software, that does not meet this Limited
+Warranty and that is returned to Microsoft with a copy of your receipt. You
+will receive the remedy elected by Microsoft without charge, except that you
+are responsible for any expenses you may incur (e.g. cost of shipping the
+Software to Microsoft). This Limited Warranty is void if failure of the
+Software has resulted from accident, abuse, misapplication, abnormal use or a
+virus. Any replacement Software will be warranted for the remainder of the
+original warranty period or thirty (30) days, whichever is longer, and
+Microsoft will use commercially reasonable efforts to provide your remedy
+within a commercially reasonable time of your compliance with Microsoft's
+warranty remedy procedures. Outside the United States or Canada, neither these
+remedies nor any product support services offered by Microsoft are available
+without proof of purchase from an authorized international source. To exercise
+your remedy, contact: Microsoft, Attn. Microsoft Sales Information Center/One
+Microsoft Way/Redmond, WA 98052-6399, or the Microsoft subsidiary serving your
+country. 16. DISCLAIMER OF WARRANTIES. The Limited Warranty that appears above
+is the only express warranty made to you and is provided in lieu of any other
+express warranties or similar obligations (if any) created by any advertising,
+documentation, packaging, or other communications. Except for the Limited
+Warranty and to the maximum extent permitted by applicable law, Microsoft and
+its suppliers provide the Software and support services (if any) AS IS AND
+WITH ALL FAULTS, and hereby disclaim all other warranties and conditions,
+whether express, implied or statutory, including, but not limited to, any (if
+any) implied warranties, duties or conditions of merchantability, of fitness
+for a particular purpose, of reliability or availability, of accuracy or
+completeness of responses, of results, of workmanlike effort, of lack of
+viruses, and of lack of negligence, all with regard to the Software, and the
+provision of or failure to provide support or other services, information,
+software, and related content through the Software or otherwise arising out of
+the use of the Software. ALSO, THERE IS NO WARRANTY OR CONDITION OF TITLE,
+QUIET ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR
+NON-INFRINGEMENT WITH REGARD TO THE SOFTWARE. 17. EXCLUSION OF INCIDENTAL,
+CONSEQUENTIAL AND CERTAIN OTHER DAMAGES. TO THE MAXIMUM EXTENT PERMITTED BY
+APPLICABLE LAW, IN NO EVENT SHALL MICROSOFT OR ITS SUPPLIERS BE LIABLE FOR ANY
+SPECIAL, INCIDENTAL, PUNITIVE, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER
+(INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR CONFIDENTIAL OR
+OTHER INFORMATION, FOR BUSINESS INTERRUPTION, FOR PERSONAL INJURY, FOR LOSS OF
+PRIVACY, FOR FAILURE TO MEET ANY DUTY INCLUDING OF GOOD FAITH OR OF REASONABLE
+CARE, FOR NEGLIGENCE, AND FOR ANY OTHER PECUNIARY OR OTHER LOSS WHATSOEVER)
+ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR INABILITY TO USE THE
+SOFTWARE, THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT OR OTHER SERVICES,
+INFORMATON, SOFTWARE, AND RELATED CONTENT THROUGH THE SOFTWARE OR OTHERWISE
+ARISING OUT OF THE USE OF THE SOFTWARE, OR OTHERWISE UNDER OR IN CONNECTION
+WITH ANY PROVISION OF THIS HOME-USE EULA, EVEN IN THE EVENT OF THE FAULT, TORT
+(INCLUDING NEGLIGENCE), MISREPRESENTATION, STRICT LIABILITY, BREACH OF
+CONTRACT OR BREACH OF WARRANTY OF MICROSOFT OR ANY SUPPLIER, AND EVEN IF
+MICROSOFT OR ANY SUPPLIER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+18. LIMITATION OF LIABILITY AND REMEDIES. Notwithstanding any damages that you
+might incur for any reason whatsoever (including, without limitation, all
+damages referenced herein and all direct or general damages in contract or
+anything else), the entire liability of Microsoft and any of its suppliers
+under any provision of this HOME-USE EULA and your exclusive remedy hereunder
+(except for any remedy of repair or replacement elected by Microsoft with
+respect to any breach of the Limited Warranty) shall be limited to the greater
+of the actual damages you incur in reasonable reliance on the Software up to
+the amount actually paid by you for the Software or US$5.00. The foregoing
+limitations, exclusions and disclaimers (including Sections 15, 16 and 17)
+shall apply to the maximum extent permitted by applicable law, even if any
+remedy fails its essential purpose. 19. APPLICABLE LAW. If you acquired this
+Software in the United States, this HOME-USE EULA is governed by the laws of
+the State of Washington. If you acquired this Software in Canada, unless
+expressly prohibited by local law, this HOME-USE EULA is governed by the laws
+in force in the Province of Ontario, Canada; and, in respect of any dispute
+which may arise hereunder, you consent to the jurisdiction of the federal and
+provincial courts sitting in Toronto, Ontario. If you acquired this Software
+in the European Union, Iceland, Norway, or Switzerland, then local law
+applies. If you acquired this Software in any other country, then local law
+may apply. 20. ENTIRE AGREEMENT; SEVERABILITY. This HOME-USE EULA (including
+any addendum or amendment to this HOME-USE EULA which is included with the
+Software) is the entire agreement between you and Microsoft relating to the
+Software and the support services (if any) and they supersede all prior or
+contemporaneous oral or written communications, proposals and representations
+with respect to the Software or any other subject matter covered by this
+HOME-USE EULA. To the extent the terms of any Microsoft policies or programs
+for support services conflict with the terms of this HOMEUSE EULA, the terms
+of this HOME-USE EULA shall control. If any provision of this HOME-USE EULA is
+held to be void, invalid, unenforceable or illegal, the other provisions shall
+continue in full force and effect. Si vous avez acquis votre produit Microsoft
+au CANADA, la garantie limitésuivante vous concerne : GARANTIE LIMITÉ
+Microsoft garantit que le Logiciel fonctionnera conformént aux documents
+inclus pendant une péode de 90 jours suivant la date de réption. Si une
+garantie ou condition implicite est cré par votre Éat ou votre territoire et
+qu'une loi férale ou provinciale ou Éat en interdit le dé, vous jouissez
+élement d'une garantie ou condition implicite, MAIS UNIQUEMENT POUR LES DÉAUTS
+DÉOUVERTS DURANT LA PÉIODE DE LA PRÉENTE GARANTIE LIMITÉ (QUATRE-VINGT-DIX
+JOURS). IL N'Y A AUCUNE GARANTIE OU CONDITION DE QUELQUE NATURE QUE CE SOIT
+QUANT AUX DÉAUTS DÉOUVERTS APRÈ CETTE PÉIODE DE QUATRE-VINGT-DIX JOURS.
+Certains Éats ou territoires ne permettent pas de limiter la duréd'une
+garantie ou condition implicite de sorte que la limitation cidessus peut ne
+pas s'appliquer àous. Tous les supplénts ou toutes les mises àour relatifs au
+Logiciel, notamment, les ensembles de services ou les rérations àhaud (le cas
+éét) qui vous sont fournis aprèl'expiration de la péode de quatre-vingt-dix
+jours de la garantie limiténe sont pas couverts par quelque garantie ou
+condition que ce soit, expresse ou implicite. LIMITATION DES RECOURS; ABSENCE
+DE DOMMAGES INDIRECTS OU AUTRES. Votre recours exclusif pour toute violation
+de la prénte garantie limitéest déit ciaprè Sauf pour tout remboursement au
+choix de Microsoft, si le Logiciel ne respecte pas la garantie limitéde
+Microsoft et, dans la mesure maximale permise par les lois applicables, mê si
+tout recours n'atteint pas son but essentiel, VOUS N'AVEZ DROIT ÀAUCUNS
+DOMMAGES, NOTAMMENT DES DOMMAGES INDIRECTS. Les modalitéde la clause
+«Exclusion des dommages accessoires, indirects et de certains autres dommages
+» sont élement intéé àa prénte garantie limité Certains Éats ou territoires ne
+permettent pas l'exclusion ou la limitation des dommages indirects ou
+accessoires de sorte que la limitation ou l'exclusion cidessus peut ne pas
+s'appliquer àous. La prénte garantie limitévous donne des droits léux
+spéfiques. Vous pouvez avoir d'autres droits qui peuvent varier d'un
+territoire ou d'un Éat àn autre. VOTRE RECOURS EXCLUSIF. L'obligation intéale
+de Microsoft et de ses fournisseurs et votre recours exclusif seront, selon le
+choix de Microsoft de temps àutre sous rérve de toute loi applicable, a) le
+remboursement du prix payéle cas éét, pour le Logiciel ou b) la rération ou le
+remplacement du Logiciel qui ne respecte pas la prénte garantie limitéet qui
+est retourné Microsoft avec une copie de votre reç Vous recevrez la
+compensation choisie par Microsoft, sans frais, sauf que vous ês responsable
+des dénses que vous pourriez engager (p. ex., les frais d'envoi du Logiciel
+àicrosoft). La prénte garantie limitéest nulle si la déctuositéu Logiciel est
+causépar un accident, un usage abusif, une mauvaise application, un usage
+anormal ou un virus. Tout Logiciel de remplacement sera garanti pour le reste
+de la péode de garantie initiale ou pendant trente (30) jours, selon la plus
+longue entre ces deux péodes. Àl'extéeur des Éats-Unis ou du Canada, ces
+recours ou l'un quelconque des services de soutien technique offerts par
+Microsoft ne sont pas disponibles sans preuve d'achat d'une source
+internationale autorisé Pour exercer votre recours, vous devez communiquer
+avec Microsoft et vous adresser au Microsoft Sales Information Center/One
+Microsoft Way/Redmond, WA 98052-6399, ou àa filiale de Microsoft de votre
+pays. DÉI DE GARANTIES. La garantie limitémentionnéci-dessus constitue la
+seule garantie expresse qui vous est donnéet remplace toutes autres garanties
+expresses (s'il en est) mentionné dans un document ou sur un emballage. Sauf
+en ce qui a trait àa garantie limitéet dans la mesure maximale permise par les
+lois applicables, le Logiciel et les services de soutien technique (le cas
+éét) sont fournis TELS QUELS ET AVEC TOUS LES DÉAUTS par Microsoft et ses
+fournisseurs, lesquels par les préntes déent toutes autres garanties et
+conditions expresses, implicites ou en vertu de la loi, notamment (le cas éét)
+les garanties, devoirs ou conditions implicites de qualitéarchande,
+d'adaptation àn usage particulier, d'exactitude ou d'exhaustivitées rénses,
+des réltats, des efforts déoyéselon les rèes de l'art, d'absence de virus et
+de néigence, le tout à'érd du Logiciel et de la prestation des services de
+soutien technique ou de l'omission d'une telle prestation. PAR AILLEURS, IL
+N'Y A AUCUNE GARANTIE OU CONDITION QUANT AU TITRE DE PROPRIÉÉ ÀLA JOUISSANCE
+OU LA POSSESSION PAISIBLE, ÀLA CONCORDANCE ÀUNE DESCRIPTION NI QUANT ÀUNE
+ABSENCE DE CONTREFAÇN CONCERNANT LE LOGICIEL. EXCLUSION DES DOMMAGES
+ACCESSOIRES, INDIRECTS ET DE CERTAINS AUTRES DOMMAGES. DANS LA MESURE MAXIMALE
+PERMISE PAR LES LOIS APPLICABLES, EN AUCUN CAS MICROSOFT OU SES FOURNISSEURS
+NE SERONT RESPONSABLES DES DOMMAGES SPÉIAUX, CONSÉUTIFS, ACCESSOIRES OU
+INDIRECTS DE QUELQUE NATURE QUE CE SOIT (NOTAMMENT, LES DOMMAGES ÀL'ÉARD DU
+MANQUE ÀGAGNER OU DE LA DIVULGATION DE RENSEIGNEMENTS CONFIDENTIELS OU AUTRES,
+DE LA PERTE D'EXPLOITATION, DE BLESSURES CORPORELLES, DE LA VIOLATION DE LA
+VIE PRIVÉ, DE L'OMISSION DE REMPLIR TOUT DEVOIR, Y COMPRIS D'AGIR DE BONNE FOI
+OU D'EXERCER UN SOIN RAISONNABLE, DE LA NÉLIGENCE ET DE TOUTE AUTRE PERTE
+PÉUNIAIRE OU AUTRE PERTE DE QUELQUE NATURE QUE CE SOIT) SE RAPPORTANT DE
+QUELQUE MANIÈE QUE CE SOIT ÀL'UTILISATION DU LOGICIEL OU ÀL'INCAPACITÉDE S'EN
+SERVIR, ÀLA PRESTATION OU ÀL'OMISSION D'UNE TELLE PRESTATION DE SERVICES DE
+SOUTIEN TECHNIQUE OU AUTREMENT AUX TERMES DE TOUTE DISPOSITION DU PRÉENT
+HOME-USE EULA OU RELATIVEMENT ÀUNE TELLE DISPOSITION, MÊE EN CAS DE FAUTE, DE
+DÉIT CIVIL (Y COMPRIS LA NÉLIGENCE), DE RESPONSABILITÉSTRICTE, DE VIOLATION DE
+CONTRAT OU DE VIOLATION DE GARANTIE DE MICROSOFT OU DE TOUT FOURNISSEUR ET MÊE
+SI MICROSOFT OU TOUT FOURNISSEUR A ÉÉAVISÉDE LA POSSIBILITÉDE TELS DOMMAGES.
+LIMITATION DE RESPONSABILITÉET RECOURS. Malgrées dommages que vous puissiez
+subir pour quelque motif que ce soit (notamment, tous les dommages
+susmentionnéet tous les dommages directs ou géraux), l'obligation intéale de
+Microsoft et de l'un ou l'autre de ses fournisseurs aux termes de toute
+disposition du prént HOME-USE EULA et votre recours exclusif à'érd de tout ce
+qui préde (sauf en ce qui concerne tout recours de rération ou de remplacement
+choisi par Microsoft à'érd de tout manquement àa garantie limité se limite au
+plus événtre les montants suivants : le montant que vous avez rélement payéour
+le Logiciel ou 5,00 $US. Les limites, exclusions et dés qui prédent (y compris
+les clauses ci-dessus), s'appliquent dans la mesure maximale permise par les
+lois applicables, mê si tout recours n'atteint pas son but essentiel. La
+prénte Convention est rée par les lois de la province d'Ontario, Canada.
+Chacune des parties àa prénte reconnaîirrécablement la compénce des tribunaux
+de la province d'Ontario et consent ànstituer tout litige qui pourrait déuler
+de la prénte auprèdes tribunaux situédans le district judiciaire de York,
+province d'Ontario. Au cas oùs auriez des questions concernant cette licence
+ou que vous dériez vous mettre en rapport avec Microsoft pour quelque raison
+que ce soit, veuillez contacter la succursale Microsoft desservant votre pays,
+dont l'adresse est fournie dans ce produit, ou éivez à Microsoft Sales
+Information Center, One Microsoft Way, Redmond, Washington 98052-6399. The
+following MICROSOFT GUARANTEE applies to you if you acquired this Software in
+any other country: Statutory rights not affected - The following guarantee is
+not restricted to any territory and does not affect any statutory rights that
+you may have from your reseller or from Microsoft if you acquired the Software
+directly from Microsoft. If you acquired the Software or any support services
+in Australia, New Zealand or Malaysia, please see the "Consumer rights"
+section below. The guarantee - The Software is designed and offered as a
+general-purpose software, not for any user's particular purpose. You accept
+that no Software is error free and you are strongly advised to back-up your
+files regularly. Provided that you have a valid license, Microsoft guarantees
+that a) for a period of 90 days from the date of receipt of your license to
+use the Software or the shortest period permitted by applicable law it will
+perform substantially in accordance with the written materials that accompany
+the Software; and b) any support services provided by Microsoft shall be
+substantially as described in applicable written materials provided to you by
+Microsoft and Microsoft support engineers will use reasonable efforts, care
+and skill to solve any problem issues. In the event that the Software fails to
+comply with this guarantee, Microsoft will either (a) repair or replace the
+Software or (b) return the price you paid. This guarantee is void if failure
+of the Software results from accident, abuse or misapplication. Any
+replacement Software will be guaranteed for the remainder of the original
+guarantee period or 30 days, whichever period is longer. You agree that the
+above guarantee is your sole guarantee in relation to the Software and any
+support services. Exclusion of All Other Terms - To the maximum extent
+permitted by applicable law and subject to the guarantee above, Microsoft
+disclaims all warranties, conditions and other terms, either express or
+implied (whether by statute, common law, collaterally or otherwise) including
+but not limited to implied warranties of satisfactory quality and fitness for
+particular purpose with respect to the Software and the written materials that
+accompany the Software. Any implied warranties that cannot be excluded are
+limited to 90 days or to the shortest period permitted by applicable law,
+whichever is greater. Limitation of Liability - To the maximum extent
+permitted by applicable law and except as provided in the Microsoft Guarantee,
+Microsoft and its suppliers shall not be liable for any damages whatsoever
+(including without limitation, damages for loss of business profits, business
+interruption, loss of business information or other pecuniary loss) arising
+out of the use or inability to use the Software, even if Microsoft has been
+advised of the possibility of such damages. In any case Microsoft's entire
+liability under any provision of this Agreement shall be limited to the amount
+actually paid by you for the Software. These limitations do not apply to any
+liabilities that cannot be excluded or limited by applicable laws. Consumer
+rights - Consumers in Australia, New Zealand or Malaysia may have the benefit
+of certain rights and remedies by reason of the Trade Practices Act and
+similar state and territory laws in Australia, the Consumer Guarantees Act in
+New Zealand and the Consumer Protection Act in Malaysia in respect of which
+liability cannot lawfully be modified or excluded. If you acquired the
+Software in New Zealand for the purposes of a business, you confirm that the
+Consumer Guarantees Act does not apply. If you acquired the Software in
+Australia and if Microsoft breaches a condition or warranty implied under any
+law which cannot lawfully be modified or excluded by this agreement then, to
+the extent permitted by law, Microsoft's liability is limited, at Microsoft's
+option, to: (i) in the case of the Software: a) repairing or replacing the
+Software; or b) the cost of such repair or replacement; and (ii) in the case
+of support services: a) re-supply of the services; or b) the cost of having
+the services supplied again. Should you have any questions concerning this
+HOME-USE EULA, or if you desire to contact Microsoft for any reason, please
+use the address information enclosed in this Software to contact the Microsoft
+subsidiary serving your country or visit Microsoft on the World Wide Web at
+http://www.microsoft.com.

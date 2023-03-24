@@ -1,0 +1,10 @@
+C:\Users\mccai\source\repos\cashRegister\bin\Debug\cashRegister.exe.config
+C:\Users\mccai\source\repos\cashRegister\bin\Debug\cashRegister.exe
+C:\Users\mccai\source\repos\cashRegister\bin\Debug\cashRegister.pdb
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.csproj.AssemblyReference.cache
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.Form1.resources
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.Properties.Resources.resources
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.csproj.GenerateResource.cache
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.csproj.CoreCompileInputs.cache
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.exe
+C:\Users\mccai\source\repos\cashRegister\obj\Debug\cashRegister.pdb
