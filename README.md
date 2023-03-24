@@ -5,7 +5,7 @@
 # JC "Raynor" Code Re-Pro  
 <span style="font-size:larger;">A more sanitized/templatized version of my personal projects, past and present, for public perusal  </span>  
 
-### ===========================================================================
+---
 
 
 
