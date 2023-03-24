@@ -1,4 +1,4 @@
-# Legacy Description
+# Description
  Simple repository for every 'no longer supported' project I've written. These form my education and early development into development. No longer truly representative of me or how I code, but bonafides demonstrating where I've been.  
   
 
