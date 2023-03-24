@@ -10,4 +10,4 @@ import sys
 import os
 
 subprocess.run(
-    [sys.executable, os.path.abspath(sys.argv[0])])
+    [sys.executable, os.path.dirname(sys.argv[0])+'/paperChange.py'])
