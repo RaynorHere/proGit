@@ -7,8 +7,6 @@
 
 ---
 
-
-
 __legacy__: &nbsp; Old projects, schoolwork  
   
 __python__: &nbsp; Current, recent, and future projects in Python  
