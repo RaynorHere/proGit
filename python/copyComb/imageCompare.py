@@ -44,7 +44,8 @@ mainRoot = os.path.abspath(sys.argv[0])
 # Enumerate candidates
 # I know the listdir()->isdir()->add(element) trick
 # Will change this to that when I come back to imp multithreading
-group = os.listdir()
+# Change this to an os.walk() for simplicity; can add hooks for file formats
+group = os.listdir(mainRoot)
 group.remove('report')
 group.remove('imageCompare.py')
 group.remove('copyConfirmer.py')

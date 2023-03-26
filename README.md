@@ -7,6 +7,8 @@
 
 ---
 
-__legacy__: &nbsp; Old projects, schoolwork  
+__legacy__: &nbsp; Old projects, schoolwork. No longer supported
   
-__python__: &nbsp; Current, recent, and future projects in Python  
+__python__: &nbsp; Python projects
+  
+__bash__: &nbsp; BASH/Shell projects
