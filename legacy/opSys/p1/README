@@ -1,0 +1,52 @@
+****************
+* Project 0: Python
+* Class: Fall CS354
+* Date: 9/2/2021
+* Annika McCain
+**************** 
+
+OVERVIEW:
+
+ This program takes in a file and will count the number of unique
+ words (a dictionary) similar to a Java HashMap.
+
+
+INCLUDED FILES:
+ * wf.py - driver
+ * docs - contains all text files
+ * README - this file
+
+
+COMPILING AND RUNNING:
+To run the file:
+```
+$ python wf.py [text file]
+```
+If the text file is not defined the program will run the 
+Gettysburg-Address.txt
+
+Console output will give the results after the program finishes.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+The main idaea was to pass in a file and break it into smaller bits
+and count how many those bits were used. The main concepts were 
+reading in a file, using delimiters, replacing symbols, creating a list, 
+and sorting lists.
+
+TESTING:
+
+ This project was mostly tested using our terminal and comparing the output
+ to a given example output file.
+
+
+DISCUSSION:
+ 
+ This project in general was pretty easy for me as I have some background with 
+ Python. As a transfer student to Boise State my first programming language I 
+ learn was Python. I did hit a stumbling block with passing in the arguments
+ via the command line as my mind was trying do it like we would for Java but
+ I eneded up remember how to do it. And I used https://www.w3resource.com/
+ python-exercises/dictionary/python-data-type-dictionary-exercise-1.php as 
+ a reference for sorting the dictionary.

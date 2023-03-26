@@ -1,0 +1,9 @@
+(print(replace 1 1 2))
+
+(print(replace '(a (b c) d) '(b c) '(x y)))
+
+(print(replace '(a (b c) (d (b c))) '(b c) '(x y)))
+
+(print(replace '(a b c) '(a b) '(x y)))
+
+(print(replace '(a b c) '(b c) '(x y)))

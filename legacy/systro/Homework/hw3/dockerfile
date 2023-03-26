@@ -1,0 +1,10 @@
+FROM ubuntu:21.10
+RUN apt-get update
+RUN apt-get install -y net-tools
+RUN apt-get install -y default-jre
+RUN apt install -y openjdk-8-jdk
+RUN apt-get install -y git
+COPY . .
+RUN javac *.java
+ENTRYPOINT java TimeServer 5005
+ 

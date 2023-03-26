@@ -1,0 +1,43 @@
+Annika McCain
+Dr. Casey Kennington
+CS 354 Programming Languages
+26 Oct 2021
+
+  P344:7.1 
+  Most statically typed languages developed since the 1970s (including 
+  Java, C#, and the descendants of Pascal) use some form of name equivalence for 
+  types. Is structural equivalence a bad idea? Why or why not?
+In general, structural equivalence can be a good idea because as with most things
+it depends on the way you wish make your code. If a code is using name equivalence
+it will base the type on syntax definition and syntax declaration so if the syntax
+definition is different, a new or different operation will be performed based on 
+the syntax. But there are languages like C that are structural equivalence which
+will base the type on the structure of the program (how the structure is defined).
+Structural equivalence follows the sequence of steps and the structure of the 
+program so if the program contains similar types and consists of the same components
+the code will run with no error. The only disadvatage is that it is unable to 
+distingish between the different types of similar internal structures.
+
+P344:7.2 
+  In the following code, which of the variables (A, B, C, and D) will a
+  compiler consider to have compatible types under structural equivalence? Under 
+  strict name equivalence? Under loose name equivalence?
+  type T = array [1..10] of integer
+  S = T
+  A : T
+  B : T
+  C : S
+  D : array [1..10] of integer
+
+Under structural eqivalence all the variables (A, B, C, and D) are the same type
+(and thus compatible). They are the same type because A and B both use the 
+definition of T, C is defined by S and that holds T, and D is declared as an array
+that is the exact same as T's.
+
+Under name equivalence, A and B are incompatiable with C because in strict name 
+equivalence aliased types are distinct. And D is just incompatible with the
+other arrays.
+
+Under loose name equivalence, A, B, and C are compatiable because in loose name
+equivalence aliased types are considered equivalent but D is still incompatible
+with the other arrays.

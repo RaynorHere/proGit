@@ -1,0 +1,88 @@
+P209.4.1
+
+(E = epsilon)
+
+Basic results from automata theory tell us that the language L = a^n b^n c^n = E , abc , aabbcc , aaabbbccc , . . . is not context free. It can be captured, however, using an attribute grammar. Give an underlying CFG and a set of attribute rules that associates a Boolean attribute ok with the root R of each parse tree, such that R.ok = true if and only if the string corresponding to the fringe of the tree is in L.
+
+hint: the attribute on the rule for the root node should be something like "S.ok = [some boolean check function]". That is, S.ok evaluates to true if the conditions of the language are met. The conditions of the language are, simply, that there are an equal number of a, b, and c characters. You'll first need to write a CFG that can accept such a language and then add in the attributes to each rule)
+
+Start: As Bs Cs {start.ok := As.val == Bs.val == Cs.val}
+
+A -> a As {As.val_left := As.val_right + 1} | E {As.val := 0}
+    
+    
+B -> b Bs {Bs.val_left := Bs.val_right + 1} | E {Bs.val := 0}
+    
+
+C -> c Cs {Cs.val.left := Cs.val.right + 1} | E {Cs.right := 0}
+
+
+
+
+P286:6.1
+
+We noted in Section 6.1.1 that most binary arithmetic operators are left-associative in most programming languages. In Section 6.1.4, however, we also noted that most compilers are free to evaluate the operands of a binary operator
+in either order. Are these statements contradictory? Why or why not?
+
+No, these are not contradictory statements. Putting aside the fact that most operators being left-associative and most compilers being "ambidextrous" in no way prevents the two from working together, there's also the fact that whenever one has multiples of the same operators in a single expression, the associative property of those operators is what decides which sub-expressions are which operator's arguments. This does not change the order in which they are evaluated.
+
+Case in point:
+Subtraction is left-associative, and so if one has F(A) - G(B) - H(C), the standard order of operations of subtraction means it groups into (F(A) - G(B)) - H(C), and not  F(A) - (G(B) - H(C)). That said, that rule in no way affects whether F or G is the first function called by the program.
+
+
+
+P287:6.8
+
+Languages that employ a reference model of variables also tend to employ automatic garbage collection. Is this more than a coincidence? Explain.
+
+Knee-jerk reaction is to paraphrase Obi-Wan and say there's no such things as coincidences (particularly in computer science), but on top of that, I would think that auto-garbage-collection would be a very wise decision to include for any language that's going to give even remotely expansive variable (and therefore memory control) options to a user/dev. One's paradigm is going to need to be extremely on top of things to ensure that memory is routinely circulated and object references are kept track of, and consistent. Beyond that, just having to keep track of when we stop referencing certain variables could very easily, very quickly, become an utter nightmare. Speaking from experience, most folks don't learn a great deal about careful, manual memory management/recycling. Even if they/we did, with systems as large as they can get today, we'd be putting all our energy into offloading the lethal tedium of manually clearing/reassigning memory onto the computer, anyway.
+
+
+
+P289:6.25
+
+Consider a mid-test loop, here written in C, that looks for blank lines in its input:
+
+for (;;) {
+  line = read_line();
+  if (all_blanks(line)) break;
+  consume_line(line);
+}
+Show how you might accomplish the same task using a while or do ( repeat ) loop, if mid-test loops were not available. (Hint: One alternative duplicates part of the code; another introduces a Boolean flag variable.) How do these alternatives compare to the mid-test version?
+
+WHILE Loop Configuration:
+line = read_line();
+while(!all_blanks(line)) {
+    consume_line(line);
+    }
+
+
+
+P290:6.26
+
+Rubin [Rub87] used the following example (rewritten here in C) to argue in favor of a goto statement:
+
+int first_zero_row = -1;
+/* none */
+int i, j;
+for (i = 0; i < n; i++) {
+  for (j = 0; j < n; j++) {
+    if (A[i][j]) goto next;
+  }
+  first_zero_row = i;
+  break;
+  next: ;
+}
+The intent of the code is to find the first all-zero row, if any, of an n × n matrix. Do you find the example convincing? Is there a good structured alternative in C? In any language?
+
+"Convincing" is an interesting choice of words. From what I can tell, it WORKS, but as I understand it, isn't "goto" kind of frowned upon? Sniffing around, a better form would be:
+
+for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+        if (A[i][j]) break;
+    }
+    if (j == n) {
+        first_zero_row = i;
+        break;
+    }
+}

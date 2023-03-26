@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "LabGuide"
+		},
+		{
+			"path": "LabWarmup"
+		},
+		{
+			"path": "LabActivity"
+		},
+		{
+			"path": "CodingJournal"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/.vscode": true,
+			"**/*.o": true,
+			"**/.placeholder": true
+		}
+	}
+}

@@ -1,0 +1,43 @@
+****************
+* Project 1: C#
+* Class: Fall CS354
+* Date: 9/23/2021
+* Annika McCain
+**************** 
+
+OVERVIEW:
+
+ This program takes user input of an item, how many there are of it, and its price. 
+ The program will then calculate how much it the items would be in a sale.
+
+
+INCLUDED FILES:
+ * cashRegister (folder)
+   - bin (folder)
+   - obj (folder)
+   - Properties (folder)
+   - App.config
+   - cashRegister.csproj
+   - cashRegister.csproj.user
+   - cashRegister.sln
+   - Form1.cs
+   - Form1.Designer.cs
+   - Form1.resx
+   - Program.cs
+
+TESTING:
+
+ This project was mostly tested using our app and comparing the output
+ to real reciepts or calculated totals.
+
+
+DISCUSSION:
+ 
+ This project in general the coding was easy but the IDE (in my case Visual Studio)
+ was pretty cool in the beginning but things like the actual window not matching the
+ design I made was frustrating. And often the program was pretty slow to start the
+ code. In general as I have experience in C I felt like it was pretty smooth sailing
+ for the code itself. There were some weird things in C# like how there is Int32, 
+ Int64, decimals, vars, and other specialized variables or that class and method 
+ names didn't use the same kind of casing. But it didn't feel like it was too far 
+ out there. 

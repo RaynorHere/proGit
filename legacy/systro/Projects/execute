@@ -1,0 +1,5 @@
+rm p1/*.class
+javac p1/*.java
+terminator -x "java p1.ChatServer 4649"
+terminator -x "java p1.ChatClient"
+terminator -x "java p1.ChatClient"

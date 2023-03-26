@@ -1,0 +1,12 @@
+# Coding Journal
+## Name: James Crowell
+## Lab: Module 9 Pt I
+## Entries:
+### October 19, 2021
+Whoof. Okay. Man. I feel definitely better about this one than I did about the last one, but it's telling about how anxious C makes me that something like this, a linked list, which I could do in a medically-induced coma, is actually causing me cathartic relief when it (appears to) work. I am also qualifying the statement "it works" with "appears to", which is less confident than I usually am.
+
+At any rate, it looks good. I can run in, add multiple songs, change them around ad nauseum, print out the whole list, artist search works; far as I can tell, I'm set. Valgrind doesn't find any complaints when I run my program through it, but when I run the weird little gauntlet option ("-t"), my screen positively detonates with text I don't fully understand, which also seems to suggest there is (very small, from what I can tell) leak in my program somewhere that I am not encountering when I run valgrind manually. Not sure what that's all about, and I am prepared (if displeased) to eat a couple points on code quality for having a leak or leaks.
+
+I may have -FINALLY-, _MAYBE_ gotten to a point where I can consistently accept and use input from the user in the form of characters and strings without causing my program to do wonky, aggravating things. The NewlineTrim() function that I stumbled upon last week (and was also given to us this week) seems to reliably de-newline whole strings we pull in, while the statement "while (getchar() != '\n');" has managed to allow me to get char input without the buffer doing weird, arcane nonsense without my consent or intent. This has fixed a major stability problem I've been dealing with since we started dealing with user char/string input en masse 3 or 4 weeks ago. That alone I consider worthy of celebration.
+
+Anyway. I would like very much to ace this class; ace these assignments. Ordinarily I could write off getting Cs as "good enough" (and indeed, I DO do that in my statistics class), but programming.... Programming is something I've discovered a real love for, and the double edge of that sword is that when there are elements of it I don't understand and/or have not yet mastered, I can't put it down or stop fixating on it. I would hope that would indicate a good fit for a future in CS, because otherwise all it means is really garbage sleep in the present.

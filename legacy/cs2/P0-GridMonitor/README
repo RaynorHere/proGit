@@ -1,0 +1,71 @@
+***************************
+* Project 1: Grid Monitor *
+* CS-221, Sec. 2, Vail    *
+*         01/22/21        *
+* Jim "JCIII" Crowell     *
+***************************
+
+
+OVERVIEW:
+
+GridMonitor.java's intent is to take in a provided .txt file and build a two-dimensional array with the values contained within. From there, it is capable of "crunching" those numbers to obtain derivative arrays. Specifically, a sum of the cells surrounding each individual cell, an average of that sum, a sort of "standard deviation" for a cell's "safe" range, and a grid demonstrating which cells, if any, are at a dangerous level.
+
+
+INCLUDED FILES:
+
+GridMonitor.java - Class Source File
+GridMonitorInterface.java - Class Source File
+GridMonitorTest.java - Class Test Battery File
+README - This very file
+
+
+COMPILING AND RUNNING:
+
+Ensure that all of the above files are located in the same directory. Navigate to that directory in your terminal, and enter:
+
+$ javac *.java
+
+This will compile each java program, afterward, utilizing
+
+$ java GridMonitor
+
+will run GridMonitor. Similarly,
+
+$ java GridMonitorTest
+
+will run the test file. Please note: as GridMonitor is a framework program, it currently does not perform any functions if run by itself, even if an input .txt file is available. Currently, to achieve tangible output, one must run the GridMonitorTest file, which will run GridMonitor with through a set of specified test circumstances. The console will show the test results of the programs running. 
+This test program requires a set of .txt files which are not included in the submission of this project, as students were assured graders/instructors would have their own copies to utilize.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+The most important thing to understand about this program is that it's predicated on nested FOR loops. When building an array, the FOR loops are how we iterate through data to input and arrange it in the proper format.
+A nested FOR loop allows us to run a loop as many times as we have elements to process, for every individual line of elements. That is, for a block of information that is made up of 4 rows and 5 columns, we run a loop 4 times (one for each row), and in EACH of those loops, a second loop is run 5 times (one for each column). Nesting these loops allows us to arrange and process data, left-to-right, top-to-bottom, although that's just one way of directing the flow.
+
+The other key part to keep in mind is that each individual function starts off performing the prior function. This way, the program can be run in any order (which will depend entirely on priority of the user at the time). This ensures that if getDangerGrid is run first, that will, by the daisy-chain, guarantee that the program will construct the delta, average, and sum grids. The base grid we can safely assume is extant, because its creation is embedded in the constructor.
+
+On which note, the constructor receives a filename for input, and the program creates a scanner to read that file line-by-line. It parses the first numbers into X and Y VARIABLES (to form the dimensions of the arrays), and then the following numbers into the elements of the arrays themselves. These elements are populated through those nested FOR loops, pulling the numbers one by one, row by row, from the .txt file, and assembling the array in a  one-to-one fashion.
+
+The constructor gives us our base array, from which all other arrays are derived. The surroundingSumArray uses the same nested FOR loop function to walk through the base array, pulling the numbers on the left, right, top, and bottom of every individual number, and combining them. When no such adjacent value exists, the number itself is substituted in.
+
+From there, the program's design becomes much simpler, as the array representing surrounding cell averages is simple divison of each element of surroundingSumArray by 4, and, in turn, the deltaArray is a further division by 2. These, too, are made possible by iterating in two dimensions with nested FOR loops.
+
+One final set of loops walks through the original base array, comparing its value with a "therapeutic index", that is, a range of values that are "safe" for the base array cell to read at. This index is obtained by applying the delta values to the averages we obtained from the surroundingSum grid, both in the positive and negative directions, giving us our "range". Any base cell reading outside of this range represents a cell in danger of exploding, and the getDangerArray function gives us that information in an at-a-glance format.
+
+For aesthetics' sake, GridMonitor includes a toString method, which will output a grid identical in meaning to the dangerGrid (knowledge of impending explosion was judged to be of the utmost priority), but it's significantly prettied-up.
+
+
+TESTING:
+
+Well, the testER file was the primary method of testING, as one might expect. That said, there was a small issue with all arrays past baseArray being empty, which throws off the whole rest of the program. I originally mocked up several toString methods, one for each array, so I could change individual elements of the program, or an input file, and trace where those changes ended up. This program ended up teaching me that you actually CAN'T clone arrays by setting them equal to each other; one must actually iterate element-by-element and assign them individually. I'm not entirely clear why, but it's good to know.
+
+After a good cumulative five hours of bug-testing to what-iffing after program completion, I'm fairly confident it can handle just about anything thrown at it. The way it pulls input files apart should ensure that formatting matches up, vis-a-vis rows and columns in, rows and columns out. Obviously, if one were to feed a .txt file of letters instead of numbers, it'd break down. Other than that, I'm pretty proud of how this turned out.
+
+
+DISCUSSION:
+
+Not a whole lot here; partly because I've peppered things that probably qualify as "discussion" in areas above, and partly because this was relatively painless. I was quite nervous at first; feeling like I'd forgotten everything I learned from 121, but the glove slipped back on pretty quickly. What surprised me was how I was able to figure out the NullPointerException I was getting early on (arrays were declared, but not intialized); an error like that would have completely thrown me, but my instincts cracked it faster than I would have expected. Ditto the InputMismatch (eventually rebuilt my old Scanner to a two-Scanner system, one to pull a line, one to pull numbers as doubles, with a whitespace delimiter), above all, I'm really amazed (and relieved) at the reflexes I've built up for CS that I didn't realize I had.
+
+I'm still not quite as good with the debugger as I wish I was, and I'm genuinely surprised we don't cover that in 121. I remember Dr. Vail mentioning it being more important in 221, though, and I'm excited. It's a handy tool to have.
+
+Finally, the last issue I had was the blank array problem I mentioned above, and through it this project taught me that you have to use nested FORs even to copy one array into another. It seems like an oversight; I would expect to be able to declare and initialize an array of identical shape/size, and then just pull the values from a parent array into the child by saying "[array1] = [array2]". Apparently not, or if there IS a way, I'm not familiar with it, yet.
