@@ -6,9 +6,11 @@
 <span style="font-size:larger;">A more sanitized/templatized version of my personal projects, past and present, for public perusal  </span>  
 
 ---
-
+__bash__: &nbsp; BASH/Shell projects  
+  
+__c__: &nbsp; COMING SOON - File comparer in C currently in development - 03/27/2023  
+  
 __legacy__: &nbsp; Old projects, schoolwork. No longer supported
   
 __python__: &nbsp; Python projects
   
-__bash__: &nbsp; BASH/Shell projects
