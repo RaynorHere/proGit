@@ -20,7 +20,7 @@ def grabSource(character: str):
     # Go to root website and grab gallery listing. Also create subfolder
     # Creates rawhtml file pullImage() uses
 
-    url = url + '/.+?/'+character    # Target character
+    url = url + '/.+?/'+character    # Target character; regex curr for DA gall
     page = requests.get(url)
     os.mkdir('./'+character+'/')
     outFile = open('./'+character+'/rawhtml', 'wb')  # Note bytes permission
