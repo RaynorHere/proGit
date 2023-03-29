@@ -1,8 +1,9 @@
-# Description
- Simple repository for every 'no longer supported' project I've written. These form my education at BSU and early development into development. No longer truly representative of me or how I code, but bonafides demonstrating where I've been.  
+# No Longer Supported  
+Just bits and pieces from my education.  
+No longer really representative, but form some early bona-fides.
   
 
- ## MANIFEST
+ ## Projects
   <span style="font-size:larger;">__bruteLoops__:</span> &nbsp; Password brute-forcer; Java. Runs on nested loops. Second semester  
   <span style="font-size:larger;">__cDev__:</span>  &nbsp;  Homework and projects from CS-253 (Development in C); C  
   <span style="font-size:larger;">__cs1__:</span>    &nbsp;  Homework and projects from CS-121 (Computer Science 1); Java. Earliest work  

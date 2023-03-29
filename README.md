@@ -8,7 +8,7 @@
 ---
 __bash__: &nbsp; BASH/Shell projects  
   
-__c__: &nbsp; COMING SOON - File comparer in C currently in development - 03/27/2023  
+__c__: &nbsp; C projects  
   
 __legacy__: &nbsp; Old projects, schoolwork. No longer supported
   
