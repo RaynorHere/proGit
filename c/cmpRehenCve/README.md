@@ -7,7 +7,7 @@ Currently in 1.0; unit tests complete. Manual data comparison (byte by byte) pro
 
 ## Current State  
 Program finished 1.0 test battery on 03/29/2023.  
-Said battery was to run on the image backup root directory of my parents' computer: 27,000 files, poorly maintained/tracked, all compared against each other on hardware that is 10 years obsolete.  
+__Battery__: Run on the image backup root directory of parents' computer: 27,000 files, poorly maintained/tracked, all compared against each other on hardware that is 10 years obsolete.  
 __Results__: Runtime of just under 19 hours, with over 5,000 files detected as duplicates, leading to a recovery of 20 GB backup storage space.  
   
 ## Improvement Ideas  
