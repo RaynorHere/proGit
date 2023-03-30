@@ -13,4 +13,4 @@ __Results__: Runtime of just under 19 hours, with over 5,000 files detected as d
 ## Improvement Ideas  
 1) Multithreading. Haven't done multithreading in C in a while, and it might be enough of an excuse to port to C++; in any case, most obvious direct improvement to runtime will be multithreading
 
-2) Parameterization. Now that the program's been brough to a working format, can change programmatic statements to functions/definitions, in order to parameterize/condense/clean up code flow. This is a proof of concept; still in need of refinement.
+2) Parameterization. Now that the program's been brought to a (demonstrative) working format, can change programmatic statements to functions/definitions, in order to parameterize/condense/clean up code flow. This is a proof of concept; still refining.
