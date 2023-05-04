@@ -8,7 +8,7 @@ run it, and let it work.
 Shelved 05/04/2023.  
 Remaining task: find optimal MProc paradigm/tool to process list combinationally  
 Will return before end of summer  
-See note on cCheck.py Line 222  
+See note on cCheck.py Line 211  
   
   
 ## CHANGELOG:  
