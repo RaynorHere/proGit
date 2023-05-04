@@ -1,10 +1,7 @@
 # Python Projects
 
 ## Complete/Shelved
-<span style="font-size:larger;">__copyComb__:</span> &nbsp; Program designed to accept a directory and compare every file in it with every other file in it (subdirectories included). Suite also includes a verifier designed to exhibit redundant files to user, and a deletion function to delete all identical files but one.  
-### Addendum:  
-Improved "2.0" version completed; see Python project, "cCheck.py"  
-~~Want to write a manual byte-by-byte comparison algorithm like cmpRehenCve (see C folder), to see how much runtime improvement that might or might not offer over the current equality comparison method.~~  
+<span style="font-size:larger;">__copyComb__:</span> &nbsp; Program designed to accept a directory and compare every file in it with every other (subdirectories included). Intended purpose is to weed out duplicates by "combing" through directories, esp picture backup directories. Currently nearing multiprocessed (as in, multiple individual iterations of Python which do not share a Global Interpreter Lock and so are more powerful than standard multithreading) version as of 05/04/2023, when spare time became much shorter in supply.  
   
 &nbsp;  
   
