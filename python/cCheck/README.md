@@ -5,7 +5,10 @@ other to check for duplicate files. The comparison is comprehensive, and every
 step of the process is meant to be programmatic: that is, place it in a directory,
 run it, and let it work.  
 
-Completed 04/03/2023  
+Shelved 05/04/2023.
+Remaining task: find correct MProc paradigm/tool to process list combinationally
+Will return before end of summer
+See note on cCheck.py Line 222
   
   
 ## CHANGELOG:  
