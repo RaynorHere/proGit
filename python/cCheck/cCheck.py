@@ -97,7 +97,7 @@ def core():
     # from mainRoot down. It will not truncate or make relative
     # any files it finds, as far as I can tell after extensive
     # testing
-    for file in glob.glob('/home/raynor/git/workshop/firingGround/ccheck' + "/**/*", recursive=True):
+    for file in glob.glob(mainRoot + "/**/*", recursive=True):
         if os.path.isfile(file):
             manifest.append(file)
     ####        ////////////////        ####
